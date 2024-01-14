@@ -131,11 +131,11 @@ class TurnCoordinator(QWidget):
 
         # Insert Background
         if not self.render_as_dial:
-            p.setCompositionMode(QPainter.CompositionMode_ColorDodge)
+            p.setCompositionMode(QPainter.CompositionMode.CompositionMode_ColorDodge)
         p.drawPixmap(0, 0, self.background)
 
         # Draw TC Ball
-        p.setCompositionMode(QPainter.CompositionMode_SourceOver)
+        p.setCompositionMode(QPainter.CompositionMode.CompositionMode_SourceOver)
         p.setRenderHint(QPainter.RenderHint.Antialiasing)
         ball_rad = self.boxHeight / 2
         if self.alat_item.bad or self.alat_item.old:
