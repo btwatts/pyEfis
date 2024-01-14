@@ -128,6 +128,6 @@ class ArcGauge(AbstractGauge):
         p.setPen(pen)
         f.setPixelSize(qRound(self.height() / 2))
         fm = QFontMetrics(f)
-        x = fm.width(self.valueText)
+        x = fm.horizontalAdvance(self.valueText)
         path.addText(QPointF( self.width()-x, self.height()-1),f, self.valueText)
         p.drawPath(path)

@@ -67,7 +67,7 @@ class VSI_Dial(QWidget):
         textRect = QRectF(-40, -self.r + self.fontSize, 80, self.fontSize + 10)
         textRInv = QRectF(40, self.r - self.fontSize, -80, -self.fontSize - 10)
 
-        pixelsWide = fm.width("0")
+        pixelsWide = fm.horizontalAdvance("0")
         pixelsHigh = fm.height()
         p.translate(self.center)
         p.save()
@@ -82,7 +82,7 @@ class VSI_Dial(QWidget):
         p.drawText(0, 0, pixelsWide, pixelsHigh,
                    Qt.AlignmentFlag.AlignCenter, '0')
 
-        pixelsWide = fm.width("2.0")
+        pixelsWide = fm.horizontalAdvance("2.0")
         transform = QTransform()
         transform.translate(p.device().width() / 2,
                             p.device().height() / 2)
@@ -223,7 +223,7 @@ class VSI_PFD(QWidget):
         pen.setWidth(1)
         p.setPen(pen)
         p.setBrush(QColor(Qt.GlobalColor.white))
-        pixelsWidth = fm.width("0")
+        pixelsWidth = fm.horizontalAdvance("0")
         pixelsHigh = fm.height()
 
         # find max
