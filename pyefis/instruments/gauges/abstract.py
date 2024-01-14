@@ -62,12 +62,12 @@ class AbstractGauge(QWidget):
         # These are the colors that are used when the value's
         # quality is marked as good
         self.bgGoodColor = QColor(Qt.GlobalColor.black)
-        self.safeGoodColor = QColor(Qt.green)
-        self.warnGoodColor = QColor(Qt.yellow)
-        self.alarmGoodColor = QColor(Qt.red)
+        self.safeGoodColor = QColor(Qt.GlobalColor.green)
+        self.warnGoodColor = QColor(Qt.GlobalColor.yellow)
+        self.alarmGoodColor = QColor(Qt.GlobalColor.red)
         self.textGoodColor = QColor(Qt.GlobalColor.white)
         self.penGoodColor = QColor(Qt.GlobalColor.white)
-        self.highlightGoodColor = QColor(Qt.magenta)
+        self.highlightGoodColor = QColor(Qt.GlobalColor.magenta)
 
         # These colors are used for bad and fail
         self.bgBadColor = QColor(Qt.GlobalColor.black)
@@ -79,7 +79,7 @@ class AbstractGauge(QWidget):
         self.highlightBadColor = QColor(Qt.darkMagenta)
 
         # Annunciate changes the text color
-        self.textAnnunciateColor = QColor(Qt.red)
+        self.textAnnunciateColor = QColor(Qt.GlobalColor.red)
 
         # The following properties should not be changed by the user.
         # These are set real time based on changes in different states

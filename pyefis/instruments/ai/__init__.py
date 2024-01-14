@@ -108,8 +108,8 @@ class AI(QGraphicsView):
         self.fail_scene.addRect(0,0, sceneWidth, sceneHeight, QPen(QColor(Qt.GlobalColor.white)), QBrush(QColor(50,50,50)))
         font = QFont("FixedSys", 80, QFont.Bold)
         t = self.fail_scene.addSimpleText("XXX", font)
-        t.setPen (QPen(QColor(Qt.red)))
-        t.setBrush (QBrush(QColor(Qt.red)))
+        t.setPen (QPen(QColor(Qt.GlobalColor.red)))
+        t.setBrush (QBrush(QColor(Qt.GlobalColor.red)))
         r = t.boundingRect()
         t.setPos ((sceneWidth-r.width())/2, (sceneHeight-r.height())/2)
 
@@ -118,7 +118,7 @@ class AI(QGraphicsView):
         gradientBlue.setColorAt(0.7, QColor(0, 51, 102))
         gradientBlue.setColorAt(1.0, QColor(51, 153, 255))
         gradientBlue.setSpread(0)
-        self.blue_pen = QPen(QColor(Qt.blue))
+        self.blue_pen = QPen(QColor(Qt.GlobalColor.blue))
         self.gblue_brush = QBrush(gradientBlue)
         gradientLGray = QLinearGradient(0, 0, 0, sceneHeight / 2)
         gradientLGray.setColorAt(0.7, QColor(100, 100, 100))
@@ -211,7 +211,7 @@ class AI(QGraphicsView):
 
         # Draws the static overlay stuff to a pixmap
         self.map = QPixmap(self.width(), self.height())
-        self.map.fill(Qt.transparent)
+        self.map.fill(Qt.GlobalColor.transparent)
         p = QPainter(self.map)
         p.setRenderHint(QPainter.RenderHint.Antialiasing)
         # change width and height to the view instead of the scene
@@ -219,7 +219,7 @@ class AI(QGraphicsView):
         h = self.height()
         r = self.bankAngleRadius
         p.setPen(QColor(Qt.GlobalColor.black))
-        p.setBrush(QColor(Qt.yellow))
+        p.setBrush(QColor(Qt.GlobalColor.yellow))
         p.drawRect(QRectF(w / 4, h / 2 - 3, w / 6, 6))
         p.drawRect(QRectF(w - w / 4 - w / 6, h / 2 - 3, w / 6, 6))
         p.drawEllipse(QRectF(w / 2 - 3, h / 2 - 3, 9, 9))
@@ -316,7 +316,7 @@ class AI(QGraphicsView):
                                 QPointF(-m*0.8, -(r+m*0.8)),
                                 QPointF(-0, -r - m*1.6),
                                 QPointF(m*0.8, -(r+m*0.8))])
-            p.setBrush(Qt.transparent)
+            p.setBrush(Qt.GlobalColor.transparent)
             p.rotate(a)
             p.drawPolygon(diamond)
             p.rotate(-2 * a)
@@ -432,7 +432,7 @@ class FDTarget(QGraphicsView):
 
         self.scene = QGraphicsScene(0, 0, self.w*2, self.w*2)
         pen = QPen(QColor(Qt.GlobalColor.black))
-        brush = QBrush (QColor (Qt.magenta))
+        brush = QBrush (QColor (Qt.GlobalColor.magenta))
         ps = [QPointF (x,y) for x,y in self.poly_points]
         fdpoly = QPolygonF (ps)
         self.poly = self.scene.addPolygon (fdpoly, pen, brush)

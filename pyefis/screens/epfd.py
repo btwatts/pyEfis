@@ -124,8 +124,8 @@ class CheckEngine(QGraphicsView):
         self.resize(qRound(self.w), qRound(self.h))
         self.scene = QGraphicsScene(0, 0, self.w, self.h)
         t = self.scene.addSimpleText (self.text, font)
-        t.setPen(QPen(QColor(Qt.red)))
-        t.setBrush(QBrush(QColor(Qt.red)))
+        t.setPen(QPen(QColor(Qt.GlobalColor.red)))
+        t.setBrush(QBrush(QColor(Qt.GlobalColor.red)))
         self.setScene(self.scene)
         self.fix_items = None
         self.hide()

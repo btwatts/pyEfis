@@ -83,8 +83,8 @@ class HSI(QGraphicsView):
         compassBrush = QBrush(QColor(self.bg_color))
         nobrush = QBrush()
 
-        headingPen = QPen(QColor(Qt.magenta))
-        headingBrush = QBrush(QColor(Qt.magenta))
+        headingPen = QPen(QColor(Qt.GlobalColor.magenta))
+        headingBrush = QBrush(QColor(Qt.GlobalColor.magenta))
         headingPen.setWidth(1)
 
 
@@ -141,7 +141,7 @@ class HSI(QGraphicsView):
 
         # Draws the static overlay stuff to a pixmap
         self.map = QPixmap(self.width(), self.height())
-        self.map.fill(Qt.transparent)
+        self.map.fill(Qt.GlobalColor.transparent)
         p = QPainter(self.map)
         p.setRenderHint(QPainter.RenderHint.Antialiasing)
         # set the width and height for conveinience
@@ -149,11 +149,11 @@ class HSI(QGraphicsView):
         # h = self.height()
 
         p.setPen(QPen(QColor(self.fg_color),2))
-        p.setBrush(QColor(Qt.transparent))
+        p.setBrush(QColor(Qt.GlobalColor.transparent))
         # Outer ring
         p.drawEllipse(QRectF(self.cx-self.r, self.cy-self.r, self.r*2.0, self.r*2.0))
         # Draw the pointer marks
-        p.setPen(QPen(QColor(Qt.yellow), 3))
+        p.setPen(QPen(QColor(Qt.GlobalColor.yellow), 3))
         if self.visiblePointers[0]:
             # Top Pointer
             p.drawLine(QLineF(self.cx, self.cy - self.r - 5,
@@ -204,7 +204,7 @@ class HSI(QGraphicsView):
 
         compassPen = QPen(QColor(self.fg_color))
         compassBrush = QBrush(QColor(self.bg_color))
-        cdiPen = QPen(QColor(Qt.yellow))
+        cdiPen = QPen(QColor(Qt.GlobalColor.yellow))
         cdiPen.setWidth(3)
         c.setRenderHint(QPainter.RenderHint.Antialiasing)
 
@@ -343,8 +343,8 @@ class HeadingDisplay(QWidget):
         c.drawRect(tr)
         if self._fail:
             heading_text = "XXX"
-            c.setBrush(QBrush(QColor(Qt.red)))
-            c.setPen(QPen(QColor(Qt.red)))
+            c.setBrush(QBrush(QColor(Qt.GlobalColor.red)))
+            c.setPen(QPen(QColor(Qt.GlobalColor.red)))
         elif self._bad:
             heading_text = ""
             c.setBrush(QBrush(QColor(255, 150, 0)))
@@ -407,7 +407,7 @@ class DG_Tape(QGraphicsView):
         compassPen = QPen(QColor(Qt.GlobalColor.white))
         compassPen.setWidth(2)
 
-        headingPen = QPen(QColor(Qt.red))
+        headingPen = QPen(QColor(Qt.GlobalColor.red))
         headingPen.setWidth(8)
 
         f = QFont()

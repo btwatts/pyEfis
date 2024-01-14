@@ -100,8 +100,8 @@ class Altimeter(QWidget):
         if self.item.fail:
             warn_font = QFont("FixedSys", 30, QFont.Bold)
             dial.resetTransform()
-            dial.setPen (QPen(QColor(Qt.red)))
-            dial.setBrush (QBrush(QColor(Qt.red)))
+            dial.setPen (QPen(QColor(Qt.GlobalColor.red)))
+            dial.setBrush (QBrush(QColor(Qt.GlobalColor.red)))
             dial.setFont (warn_font)
             dial.drawText (0,0,w,h, Qt.AlignmentFlag.AlignCenter, "XXX")
             return

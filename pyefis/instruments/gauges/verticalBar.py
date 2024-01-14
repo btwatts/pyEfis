@@ -33,13 +33,13 @@ class VerticalBar(AbstractGauge):
         self.textGap = 3
         self.smallFontPercent = 0.08
         self.bigFontPercent = 0.10
-        self.normalizePenColor = QColor(Qt.blue)
+        self.normalizePenColor = QColor(Qt.GlobalColor.blue)
         self.normalizeRange = 0
         self.normalizeReference = 0
         self._normalizeMode = False
         self.peakValue = 0.0
         self._peakMode = False
-        self.peakColor = QColor(Qt.magenta)
+        self.peakColor = QColor(Qt.GlobalColor.magenta)
         self._oldpencolor = self.penGoodColor
 
     def getNormalizeMode(self):

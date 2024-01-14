@@ -161,8 +161,8 @@ class TurnCoordinator(QWidget):
                          self.boxTop + ball_rad)
         if self.alat_item.fail:
             warn_font = QFont("FixedSys", qRound(self.boxHeight), QFont.Bold)
-            p.setPen (QPen(QColor(Qt.red)))
-            p.setBrush (QBrush(QColor(Qt.red)))
+            p.setPen (QPen(QColor(Qt.GlobalColor.red)))
+            p.setBrush (QBrush(QColor(Qt.GlobalColor.red)))
             p.setFont (warn_font)
             p.drawText (QRectF(self.center.x()-self.boxHalfWidth,self.boxTop,self.boxHalfWidth*2,self.boxHeight),
                     Qt.AlignmentFlag.AlignCenter, "XXX")
@@ -188,8 +188,8 @@ class TurnCoordinator(QWidget):
         x = self.r - length - thickness / 2
         if self.rot_item.fail:
             warn_font = QFont("FixedSys", 20, QFont.Bold)
-            p.setPen (QPen(QColor(Qt.red)))
-            p.setBrush (QBrush(QColor(Qt.red)))
+            p.setPen (QPen(QColor(Qt.GlobalColor.red)))
+            p.setBrush (QBrush(QColor(Qt.GlobalColor.red)))
             p.setFont (warn_font)
             p.drawText (0,0,self.width(),self.height(),
                     Qt.AlignmentFlag.AlignCenter, "XXX")

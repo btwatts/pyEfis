@@ -317,9 +317,9 @@ class VirtualVfr(AI):
             x += self.scene.width()/2
             y += self.scene.height()/2
             wpen = QPen(QColor(Qt.GlobalColor.white))
-            rpen = QPen(QColor(Qt.red))
+            rpen = QPen(QColor(Qt.GlobalColor.red))
             wbsh = QBrush(QColor(Qt.GlobalColor.white))
-            rbsh = QBrush(QColor(Qt.red))
+            rbsh = QBrush(QColor(Qt.GlobalColor.red))
             if pkey in self.display_objects:
                 lights = self.display_objects[pkey]
             else:
@@ -385,7 +385,7 @@ class VirtualVfr(AI):
         else:
             font = QFont(VirtualVfr.AIRPORT_FONT_FAMILY, VirtualVfr.AIRPORT_FONT_SIZE, QFont.Bold)
             ap = self.scene.addSimpleText(airport_id, font)
-            ap.setPen(QPen(QColor(Qt.blue)))
+            ap.setPen(QPen(QColor(Qt.GlobalColor.blue)))
             ap.setBrush(QBrush(QColor(Qt.GlobalColor.white)))
             ap.setZValue(0)
             self.display_objects[akey] = ap
@@ -417,7 +417,7 @@ class VirtualVfr(AI):
         else:
             font = QFont(VirtualVfr.AIRPORT_FONT_FAMILY, VirtualVfr.AIRPORT_FONT_SIZE-2, QFont.Bold)
             vtlabel = self.scene.addSimpleText(navaid_id, font)
-            vtlabel.setPen(QPen(QColor(Qt.blue)))
+            vtlabel.setPen(QPen(QColor(Qt.GlobalColor.blue)))
             vtlabel.setBrush(QBrush(QColor(Qt.GlobalColor.white)))
             vtlabel.setZValue(0)
             vticon = self.scene.addPixmap (QPixmap (VirtualVfr.VORTAC_ICON_PATH))

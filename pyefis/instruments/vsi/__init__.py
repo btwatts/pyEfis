@@ -148,8 +148,8 @@ class VSI_Dial(QWidget):
         if self.item.fail:
             warn_font = QFont("FixedSys", 30, QFont.Bold)
             dial.resetTransform()
-            dial.setPen (QPen(QColor(Qt.red)))
-            dial.setBrush (QBrush(QColor(Qt.red)))
+            dial.setPen (QPen(QColor(Qt.GlobalColor.red)))
+            dial.setBrush (QBrush(QColor(Qt.GlobalColor.red)))
             dial.setFont (warn_font)
             dial.drawText (0,0,w,h, Qt.AlignmentFlag.AlignCenter, "XXX")
             return
@@ -212,7 +212,7 @@ class VSI_PFD(QWidget):
         h = self.height()
         # We use a pixmap for the static background
         self.background = QPixmap(self.width(), self.height())
-        self.background.fill(Qt.transparent)
+        self.background.fill(Qt.GlobalColor.transparent)
         f = QFont()
         f.setPixelSize(self.fontSize)
         fm = QFontMetrics(f)
@@ -265,8 +265,8 @@ class VSI_PFD(QWidget):
             else:
                 y = h/2 + (abs(self._value)**self.scaleRoot / self.max**self.scaleRoot) * self.dy
                 if y > h: y = h
-            p.setPen(Qt.magenta)
-            p.setBrush(Qt.magenta)
+            p.setPen(Qt.GlobalColor.magenta)
+            p.setBrush(Qt.GlobalColor.magenta)
             p.drawEllipse(QRectF(2,y-5,10,10))
         except ZeroDivisionError:
             p.setPen(Qt.GlobalColor.gray)
@@ -487,7 +487,7 @@ class Alt_Trend_Tape(QGraphicsView):
     def setVsText(self):
         if self._fail:
             self.vstext.setPlainText("XXX")
-            self.vstext.setDefaultTextColor (QColor(Qt.red))
+            self.vstext.setDefaultTextColor (QColor(Qt.GlobalColor.red))
         elif self._bad:
             self.vstext.setPlainText("")
             self.vstext.setDefaultTextColor (QColor(255, 150, 0))

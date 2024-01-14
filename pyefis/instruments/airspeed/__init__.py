@@ -60,16 +60,16 @@ class Airspeed(QWidget):
 
         needleBrush = QBrush(QColor(Qt.GlobalColor.white))
 
-        vnePen = QPen(QColor(Qt.red))
+        vnePen = QPen(QColor(Qt.GlobalColor.red))
         vnePen.setWidth(6)
 
         vsoPen = QPen(QColor(Qt.GlobalColor.white))
         vsoPen.setWidth(4)
 
-        vnoPen = QPen(QColor(Qt.green))
+        vnoPen = QPen(QColor(Qt.GlobalColor.green))
         vnoPen.setWidth(4)
 
-        yellowPen = QPen(QColor(Qt.yellow))
+        yellowPen = QPen(QColor(Qt.GlobalColor.yellow))
         yellowPen.setWidth(4)
 
         # Dial Setup
@@ -136,8 +136,8 @@ class Airspeed(QWidget):
         if self.item.fail:
             warn_font = QFont("FixedSys", 30, QFont.Bold)
             dial.resetTransform()
-            dial.setPen (QPen(QColor(Qt.red)))
-            dial.setBrush (QBrush(QColor(Qt.red)))
+            dial.setPen (QPen(QColor(Qt.GlobalColor.red)))
+            dial.setBrush (QBrush(QColor(Qt.GlobalColor.red)))
             dial.setFont (warn_font)
             dial.drawText (0,0,w,h, Qt.AlignmentFlag.AlignCenter, "XXX")
             dial.restore()
@@ -267,7 +267,7 @@ class Airspeed_Tape(QGraphicsView):
         # Yellow Bar
         r = QRectF(QPointF(0,              -self.Vno * self.pph + tape_start),
                    QPointF(self.markWidth, -self.Vne * self.pph + tape_start))
-        x = self.scene.addRect(r, QPen(Qt.yellow), QBrush(Qt.yellow))
+        x = self.scene.addRect(r, QPen(Qt.GlobalColor.yellow), QBrush(Qt.GlobalColor.yellow))
         x.setOpacity(self.foregroundOpacity)
 
         # Draw the little white lines and the text
@@ -289,7 +289,7 @@ class Airspeed_Tape(QGraphicsView):
                                    w / 3, (- i * self.pph) + tape_start, dialPen)
                 l.setOpacity(self.foregroundOpacity)
         # Red Line
-        vnePen = QPen(QColor(Qt.red))
+        vnePen = QPen(QColor(Qt.GlobalColor.red))
         vnePen.setWidth(4)
         l = self.scene.addLine(0, -self.Vne * self.pph + tape_start,
                                30, -self.Vne * self.pph + tape_start, vnePen)

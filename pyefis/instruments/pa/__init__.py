@@ -46,7 +46,7 @@ class Panel_Annunciator(QGraphicsView):
         self.scene.addRect(0, 0, self.w, self.h,
                            QPen(QColor(Qt.GlobalColor.gray)), QBrush(QColor(Qt.GlobalColor.black)))
         self.scene.addRect(1, 1, self.w -2, self.h -2,
-                           QPen(QColor(Qt.GlobalColor.black)), QBrush(QColor(Qt.transparent)))
+                           QPen(QColor(Qt.GlobalColor.black)), QBrush(QColor(Qt.GlobalColor.transparent)))
         t = self.scene.addText(str(self.Warning_State_Label))
         t.setFont(self.f)
         self.scene.setFont(self.f)
@@ -60,7 +60,7 @@ class Panel_Annunciator(QGraphicsView):
         self.scene.addRect(0, 0, self.w, self.h,
                            self.pcolor, self.bcolor)
         self.scene.addRect(1, 1, self.w -2, self.h -2,
-                           QPen(QColor(Qt.GlobalColor.black)), QBrush(QColor(Qt.transparent)))
+                           QPen(QColor(Qt.GlobalColor.black)), QBrush(QColor(Qt.GlobalColor.transparent)))
         t = self.scene.addText(str(self.Warning_State_Label))
         t.setFont(self.f)
         self.scene.setFont(self.f)
@@ -81,15 +81,15 @@ class Panel_Annunciator(QGraphicsView):
                 self.pcolor = QPen(QColor(Qt.GlobalColor.gray))
             elif Mode == 1:
                 self._Mode_Indicator = 1
-                self.bcolor = QBrush(QColor(Qt.yellow))
+                self.bcolor = QBrush(QColor(Qt.GlobalColor.yellow))
                 self.pcolor = QPen(QColor(Qt.GlobalColor.gray))
             elif Mode == 2:
                 self._Mode_Indicator = 2
-                self.bcolor = QBrush(QColor(Qt.red))
+                self.bcolor = QBrush(QColor(Qt.GlobalColor.red))
                 self.pcolor = QPen(QColor(Qt.GlobalColor.gray))
             elif Mode == 3:
                 self._Mode_Indicator = 3
-                self.bcolor = QBrush(QColor(Qt.green))
+                self.bcolor = QBrush(QColor(Qt.GlobalColor.green))
                 self.pcolor = QPen(QColor(Qt.GlobalColor.gray))
             self.redraw()
 
