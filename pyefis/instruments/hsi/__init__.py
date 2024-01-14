@@ -442,7 +442,7 @@ class DG_Tape(QGraphicsView):
                         t = self.scene.addText(self.cardinal[int(i / 90)])
                         t.setFont(f)
                         self.scene.setFont(f)
-                        t.setDefaultTextColor(QColor(Qt.cyan))
+                        t.setDefaultTextColor(QColor(Qt.GlobalColor.cyan))
                         t.setX(((i * 10) + w / 2) - t.boundingRect().width() / 2)
                         t.setY(h - t.boundingRect().height())
                     else:
