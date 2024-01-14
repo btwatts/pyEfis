@@ -38,7 +38,7 @@ class NumericDisplay(AbstractGauge):
         self.smallFont = QFont()
         self.smallFont.setPixelSize(qRound(self.height() * self.smallFontPercent))
         qm = QFontMetrics(self.smallFont)
-        unitsWidth = qm.width(self.units)
+        unitsWidth = qm.horizontalAdvance(self.units)
 
         if self.showUnits:
             self.valueTextRect = QRectF(0, 0, self.width()-unitsWidth-5, self.height())
