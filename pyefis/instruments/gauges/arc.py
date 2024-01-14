@@ -72,7 +72,7 @@ class ArcGauge(AbstractGauge):
         p.setRenderHint(QPainter.RenderHint.Antialiasing)
         pen = QPen()
         pen.setWidth(10)
-        pen.setCapStyle(Qt.FlatCap)
+        pen.setCapStyle(Qt.PenCapStyle.FlatCap)
 
         # Red Arcs
         pen.setColor(self.alarmColor)

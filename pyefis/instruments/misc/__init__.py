@@ -42,7 +42,7 @@ class StaticText(QWidget):
 
         pen = QPen()
         pen.setWidth(1)
-        pen.setCapStyle(Qt.FlatCap)
+        pen.setCapStyle(Qt.PenCapStyle.FlatCap)
         p.setPen(pen)
 
         # Draw Text
@@ -100,7 +100,7 @@ class ValueDisplay(QWidget):
 
         pen = QPen()
         pen.setWidth(1)
-        pen.setCapStyle(Qt.FlatCap)
+        pen.setCapStyle(Qt.PenCapStyle.FlatCap)
         p.setPen(pen)
 
         # Draw Value

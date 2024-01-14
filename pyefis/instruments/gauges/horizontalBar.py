@@ -42,7 +42,7 @@ class HorizontalBar(AbstractGauge):
         p.setRenderHint(QPainter.RenderHint.Antialiasing)
         pen = QPen()
         pen.setWidth(1)
-        pen.setCapStyle(Qt.FlatCap)
+        pen.setCapStyle(Qt.PenCapStyle.FlatCap)
         pen.setColor(self.textColor)
         p.setPen(pen)
         p.setFont(self.smallFont)

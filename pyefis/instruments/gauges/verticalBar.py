@@ -114,7 +114,7 @@ class VerticalBar(AbstractGauge):
 
         pen = QPen()
         pen.setWidth(1)
-        pen.setCapStyle(Qt.FlatCap)
+        pen.setCapStyle(Qt.PenCapStyle.FlatCap)
         p.setPen(pen)
         opt = QTextOption(Qt.AlignmentFlag.AlignCenter)
         if self.showName:

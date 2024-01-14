@@ -399,7 +399,7 @@ class Airspeed_Box(QWidget):
 
         pen = QPen()
         pen.setWidth(1)
-        pen.setCapStyle(Qt.FlatCap)
+        pen.setCapStyle(Qt.PenCapStyle.FlatCap)
         p.setPen(pen)
 
         # Draw Mode
