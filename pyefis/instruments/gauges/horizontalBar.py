@@ -57,7 +57,7 @@ class HorizontalBar(AbstractGauge):
         p.setFont(self.bigFont)
         pen.setColor(self.valueColor)
         p.setPen(pen)
-        opt = QTextOption(Qt.AlignmentFlag.AlignLeft | Qt.AlignBottom)
+        opt = QTextOption(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignBottom)
         p.drawText(self.valueTextRect, self.valueText, opt)
 
         # Draws the bar
