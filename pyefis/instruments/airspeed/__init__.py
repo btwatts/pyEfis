@@ -115,7 +115,7 @@ class Airspeed(QWidget):
         while count < 360:
             if count % 25 == 0 and a_s <= 140:
                 dial.drawLine(0, -radius, 0, -(radius-15))
-                x = fontMetrics.width(str(a_s)) / 2
+                x = fontMetrics.horizontalAdvance(str(a_s)) / 2
                 y = f.pixelSize()
                 dial.drawText(qRound(-x), qRound(-(radius-15 - y)),
                            str(a_s))
