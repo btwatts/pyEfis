@@ -117,13 +117,13 @@ class AI(QGraphicsView):
         gradientBlue = QLinearGradient(0, 0, 0, sceneHeight / 2)
         gradientBlue.setColorAt(0.7, QColor(0, 51, 102))
         gradientBlue.setColorAt(1.0, QColor(51, 153, 255))
-        gradientBlue.setSpread(0)
+        gradientBlue.setSpread(QGradient.Spread.PadSpread)
         self.blue_pen = QPen(QColor(Qt.GlobalColor.blue))
         self.gblue_brush = QBrush(gradientBlue)
         gradientLGray = QLinearGradient(0, 0, 0, sceneHeight / 2)
         gradientLGray.setColorAt(0.7, QColor(100, 100, 100))
         gradientLGray.setColorAt(1.0, QColor(153, 153, 153))
-        gradientLGray.setSpread(0)
+        gradientLGray.setSpread(QGradient.Spread.PadSpread)
         self.gray_sky = QBrush(gradientLGray)
         if self._AIOld or self._AIBad:
             brush = self.gray_sky
@@ -134,13 +134,13 @@ class AI(QGraphicsView):
         gradientBrown = QLinearGradient(0, sceneHeight / 2, 0, sceneHeight)
         gradientBrown.setColorAt(0.0, QColor(105, 46, 1))
         gradientBrown.setColorAt(0.3, QColor(244, 164, 96))
-        gradientBrown.setSpread(0)
+        gradientBrown.setSpread(QGradient.Spread.PadSpread)
         self.brown_pen = QPen(QColor(160, 82, 45))  # Brown Color
         self.gbrown_brush = QBrush(gradientBrown)
         gradientDGray = QLinearGradient(0, sceneHeight / 2, 0, sceneHeight)
         gradientDGray.setColorAt(0.0, QColor(20, 20, 20))
         gradientDGray.setColorAt(0.2, QColor(75, 75, 75))
-        gradientDGray.setSpread(0)
+        gradientDGray.setSpread(QGradient.Spread.PadSpread)
         self.gray_land = QBrush(gradientDGray)
         if self._AIOld or self._AIBad:
             brush = self.gray_land
