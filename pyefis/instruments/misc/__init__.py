@@ -77,7 +77,7 @@ class ValueDisplay(QWidget):
         # These colors are used for bad and fail
         self.bgBadColor = QColor(Qt.GlobalColor.black)
         self.textBadColor = QColor(Qt.GlobalColor.gray)
-        self.highlightBadColor = QColor(Qt.darkMagenta)
+        self.highlightBadColor = QColor(Qt.GlobalColor.darkMagenta)
 
         # Annunciate changes the text color
         self.textAnnunciateColor = QColor(Qt.GlobalColor.red)
