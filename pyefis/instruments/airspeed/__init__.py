@@ -209,7 +209,7 @@ class Airspeed_Tape(QGraphicsView):
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setRenderHint(QPainter.RenderHint.Antialiasing)
-        self.setFocusPolicy(Qt.RenderHint.NoFocus)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.item = fix.db.get_item("IAS")
         self._airspeed = self.item.value
 
