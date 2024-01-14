@@ -50,7 +50,7 @@ class Altimeter(QWidget):
         center_y = h/2
 
         # Draw the Black Background
-        dial.fillRect(0, 0, w, h, Qt.black)
+        dial.fillRect(0, 0, w, h, Qt.GlobalColor.black)
 
         # Setup Pens
         if self.item.old or self.item.bad:
@@ -250,7 +250,7 @@ class Altimeter_Tape(QGraphicsView):
         marks = QPen(Qt.GlobalColor.white, 1)
         p.translate(self.numeric_box_pos.x(), self.numeric_box_pos.y())
         p.setPen(marks)
-        p.setBrush(QBrush(Qt.black))
+        p.setBrush(QBrush(Qt.GlobalColor.black))
         triangle_size = 11
         p.drawConvexPolygon(QPolygonF([QPointF(0, -triangle_size),
                              QPointF(0, triangle_size),

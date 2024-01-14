@@ -182,7 +182,7 @@ class VirtualVfr(AI):
             # print ("make new runway polygon %s"%key)
             poly = QPolygonF([QPoint(*p11), QPoint(*p12), QPoint(*p21), QPoint(*p22)])
             pen = QPen(QColor(Qt.GlobalColor.white))
-            brush = QBrush(QColor(Qt.black))
+            brush = QBrush(QColor(Qt.GlobalColor.black))
             if label[-1] == "W":
                 brush = QBrush(QColor("#000070"))
             rw = self.scene.addPolygon(poly, pen, brush)
@@ -246,7 +246,7 @@ class VirtualVfr(AI):
                 else:
                     # Create new label
                     qlabel = self.scene.addSimpleText(label, font)
-                    qlabel.setPen(QPen(QColor(Qt.black)))
+                    qlabel.setPen(QPen(QColor(Qt.GlobalColor.black)))
                     qlabel.setBrush(QBrush(QColor(Qt.GlobalColor.white)))
                     qlabel.setX(self.scene.width()/2 + left_bottom[0])
                     qlabel.setY(self.scene.height()/2 + left_bottom[1])

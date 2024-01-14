@@ -68,7 +68,7 @@ class TurnCoordinator(QWidget):
         self.center = QPointF(p.device().width() / 2, p.device().height() / 2)
         self.r = min(self.width(), self.height()) * .45
 
-        p.fillRect(0, 0, self.width(), self.height(), Qt.black)
+        p.fillRect(0, 0, self.width(), self.height(), Qt.GlobalColor.black)
         if self.render_as_dial:
             p.drawEllipse(self.center, self.r, self.r)
 
@@ -103,7 +103,7 @@ class TurnCoordinator(QWidget):
                       qRound(self.boxTop + self.boxHeight)))
         p.drawRect(rect)
         # vertical black lines on TC
-        pen.setColor(QColor(Qt.black))
+        pen.setColor(QColor(Qt.GlobalColor.black))
         pen.setWidth(3)
         p.setPen(pen)
         ball_rad = self.boxHeight / 2
@@ -142,8 +142,8 @@ class TurnCoordinator(QWidget):
             pen = QPen(QColor(Qt.gray))
             brush = QBrush(QColor(Qt.gray))
         else:
-            pen = QPen(QColor(Qt.black))
-            brush = QBrush(QColor(Qt.black))
+            pen = QPen(QColor(Qt.GlobalColor.black))
+            brush = QBrush(QColor(Qt.GlobalColor.black))
         pen.setWidth(2)
         p.setPen(pen)
         p.setBrush(brush)
@@ -278,7 +278,7 @@ class TurnCoordinator_Tape(QWidget):
         # Draw the little airplane center
         p.drawEllipse(self.center, thickness, thickness)
         # vertical black lines on TC
-        pen.setColor(QColor(Qt.black))
+        pen.setColor(QColor(Qt.GlobalColor.black))
         pen.setWidth(4)
         p.setPen(pen)
         p.drawLine(self.center.x() - 30, self.boxTop,
@@ -299,8 +299,8 @@ class TurnCoordinator_Tape(QWidget):
         p.drawPixmap(0, 0, self.background)
 
         # Draw TC Ball
-        pen = QPen(QColor(Qt.black))
-        brush = QBrush(QColor(Qt.black))
+        pen = QPen(QColor(Qt.GlobalColor.black))
+        brush = QBrush(QColor(Qt.GlobalColor.black))
         pen.setWidth(2)
         p.setPen(pen)
         p.setBrush(brush)

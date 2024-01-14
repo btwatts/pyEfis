@@ -181,7 +181,7 @@ class VerticalBar(AbstractGauge):
 
         # Highlight Ball
         if self.highlight:
-            pen.setColor(Qt.black)
+            pen.setColor(Qt.GlobalColor.black)
             pen.setWidth(1)
             p.setPen(pen)
             p.setBrush(self.highlightColor)

@@ -52,7 +52,7 @@ class NumericalDisplay(QGraphicsView):
         rect_pen = QPen(QColor(Qt.GlobalColor.white))
         rect_pen.setWidth (border_width)
         self.scene.addRect(0, top, self.w, font_height,
-                           rect_pen, QBrush(QColor(Qt.black)))
+                           rect_pen, QBrush(QColor(Qt.GlobalColor.black)))
         self.setScene(self.scene)
         self.scrolling_area = NumericalScrollDisplay(self, self.scroll_decimal,
                                             self.font_family, self.font_size)
@@ -208,7 +208,7 @@ class NumericalScrollDisplay(QGraphicsView):
         nsh = self.digit_vertical_spacing * 12 + self.h
         self.scene = QGraphicsScene(0,0,self.w, nsh)
         self.scene.addRect(0, 0, self.w, nsh,
-                           QPen(QColor(Qt.black)), QBrush(QColor(Qt.black)))
+                           QPen(QColor(Qt.GlobalColor.black)), QBrush(QColor(Qt.GlobalColor.black)))
         for i in range(20):
             y = self.y_offset(i) - font_height/2
             if y < 0:

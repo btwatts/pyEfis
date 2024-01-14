@@ -47,7 +47,7 @@ class Airspeed(QWidget):
         dial.setRenderHint(QPainter.Antialiasing)
 
         #Draw the Black Background
-        dial.fillRect(0, 0, w, h, Qt.black)
+        dial.fillRect(0, 0, w, h, Qt.GlobalColor.black)
 
         # Setup Pens
         f = QFont()
@@ -336,7 +336,7 @@ class Airspeed_Tape(QGraphicsView):
         marks = QPen(Qt.GlobalColor.white, 1)
         p.translate(self.numeric_box_pos.x(), self.numeric_box_pos.y())
         p.setPen(marks)
-        p.setBrush(QBrush(Qt.black))
+        p.setBrush(QBrush(Qt.GlobalColor.black))
         triangle_size = 11
         p.drawConvexPolygon(QPolygon([QPoint(0, -triangle_size-3),
                              QPoint(0, triangle_size-2),

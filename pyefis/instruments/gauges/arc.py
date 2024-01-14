@@ -98,7 +98,7 @@ class ArcGauge(AbstractGauge):
 
         # Now we draw the line pointer
         brush = QBrush(self.penColor)
-        pen.setColor(QColor(Qt.black))
+        pen.setColor(QColor(Qt.GlobalColor.black))
         pen.setWidth(1)
         p.setPen(pen)
         p.setBrush(brush)
@@ -124,7 +124,7 @@ class ArcGauge(AbstractGauge):
         path = QPainterPath()
         brush = QBrush(self.valueColor)
         p.setBrush(brush)
-        pen.setColor(QColor(Qt.black))
+        pen.setColor(QColor(Qt.GlobalColor.black))
         p.setPen(pen)
         f.setPixelSize(qRound(self.height() / 2))
         fm = QFontMetrics(f)

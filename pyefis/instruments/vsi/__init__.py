@@ -55,7 +55,7 @@ class VSI_Dial(QWidget):
         p.setPen(pen)
         self.center = QPointF(p.device().width() / 2, p.device().height() / 2)
 
-        p.fillRect(0, 0, self.width(), self.height(), Qt.black)
+        p.fillRect(0, 0, self.width(), self.height(), Qt.GlobalColor.black)
         p.drawEllipse(self.center, self.r, self.r)
 
         # Draw tick marks and text
@@ -124,7 +124,7 @@ class VSI_Dial(QWidget):
         dial.setRenderHint(QPainter.Antialiasing)
 
         # Draw the Black Background
-        dial.fillRect(0, 0, w, h, Qt.black)
+        dial.fillRect(0, 0, w, h, Qt.GlobalColor.black)
 
         # Insert Background
         dial.drawPixmap(0, 0, self.background)
@@ -316,7 +316,7 @@ class AS_Trend_Tape(QGraphicsView):
         self.scene = QGraphicsScene(0, 0, w, h)
 
         self.scene.addRect(0, 0, w, h,
-                           QPen(QColor(Qt.black)), QBrush(QColor(Qt.black)))
+                           QPen(QColor(Qt.GlobalColor.black)), QBrush(QColor(Qt.GlobalColor.black)))
 
         self.scene.addLine(0, h / 2,
                            w, h / 2,
@@ -327,7 +327,7 @@ class AS_Trend_Tape(QGraphicsView):
     def redraw(self):
         self.scene.clear()
         self.scene.addRect(0, 0, self.width(), self.height(),
-                           QPen(QColor(Qt.black)), QBrush(QColor(Qt.black)))
+                           QPen(QColor(Qt.GlobalColor.black)), QBrush(QColor(Qt.GlobalColor.black)))
 
         self.scene.addLine(0, self.height() / 2,
                            self.width(), self.height() / 2,
@@ -405,7 +405,7 @@ class Alt_Trend_Tape(QGraphicsView):
         self.scene = QGraphicsScene(0, 0, w, h)
         self.scene.setFont(f)
         self.scene.addRect(0, 0, self.width(), h,
-                           QPen(QColor(Qt.black)), QBrush(QColor(Qt.black)))
+                           QPen(QColor(Qt.GlobalColor.black)), QBrush(QColor(Qt.GlobalColor.black)))
         t = self.scene.addText("VSI")
         t.setFont(f)
         t.setDefaultTextColor(QColor(Qt.GlobalColor.white))

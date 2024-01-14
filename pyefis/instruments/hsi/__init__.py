@@ -31,7 +31,7 @@ from pyefis import common
 
 
 class HSI(QGraphicsView):
-    def __init__(self, parent=None, font_size=15, fgcolor=Qt.GlobalColor.white, bgcolor=Qt.black):
+    def __init__(self, parent=None, font_size=15, fgcolor=Qt.GlobalColor.white, bgcolor=Qt.GlobalColor.black):
         super(HSI, self).__init__(parent)
         self.setStyleSheet("background-color: rgba(0, 0, 0, 0%); border: 0px")
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
@@ -306,7 +306,7 @@ class HSI(QGraphicsView):
 
 
 class HeadingDisplay(QWidget):
-    def __init__(self, parent=None, font_size=15, fgcolor=Qt.gray, bgcolor=Qt.black):
+    def __init__(self, parent=None, font_size=15, fgcolor=Qt.gray, bgcolor=Qt.GlobalColor.black):
         super(HeadingDisplay, self).__init__(parent)
         self.setFocusPolicy(Qt.NoFocus)
         self.fontSize = font_size
@@ -415,7 +415,7 @@ class DG_Tape(QGraphicsView):
 
         self.scene = QGraphicsScene(0, 0, 5000, h)
         self.scene.addRect(0, 0, 5000, h,
-                           QPen(QColor(Qt.black)), QBrush(QColor(Qt.black)))
+                           QPen(QColor(Qt.GlobalColor.black)), QBrush(QColor(Qt.GlobalColor.black)))
 
         self.setScene(self.scene)
 

@@ -218,12 +218,12 @@ class AI(QGraphicsView):
         w = self.width()
         h = self.height()
         r = self.bankAngleRadius
-        p.setPen(QColor(Qt.black))
+        p.setPen(QColor(Qt.GlobalColor.black))
         p.setBrush(QColor(Qt.yellow))
         p.drawRect(QRectF(w / 4, h / 2 - 3, w / 6, 6))
         p.drawRect(QRectF(w - w / 4 - w / 6, h / 2 - 3, w / 6, 6))
         p.drawEllipse(QRectF(w / 2 - 3, h / 2 - 3, 9, 9))
-        # p.setPen(QColor(Qt.black))
+        # p.setPen(QColor(Qt.GlobalColor.black))
         # p.setBrush(QColor(Qt.GlobalColor.white))
 
         m = self.bankMarkSize
@@ -278,7 +278,7 @@ class AI(QGraphicsView):
         p.translate(w / 2, h / 2)
 
         # Slip / Skid ball
-        p.setPen(QColor(Qt.black))
+        p.setPen(QColor(Qt.GlobalColor.black))
         p.setBrush(QColor(Qt.GlobalColor.white))
         p.drawEllipse(QPointF(self._latAccel * -m*12, -r + m*3), m*0.8, m*0.8)
 
@@ -431,7 +431,7 @@ class FDTarget(QGraphicsView):
                            ,(-self.w/2, polyheight/2)]
 
         self.scene = QGraphicsScene(0, 0, self.w*2, self.w*2)
-        pen = QPen(QColor(Qt.black))
+        pen = QPen(QColor(Qt.GlobalColor.black))
         brush = QBrush (QColor (Qt.magenta))
         ps = [QPointF (x,y) for x,y in self.poly_points]
         fdpoly = QPolygonF (ps)

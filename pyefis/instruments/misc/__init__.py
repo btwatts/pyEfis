@@ -70,12 +70,12 @@ class ValueDisplay(QWidget):
         self.outlineColor = QColor(Qt.darkGray)
         # These are the colors that are used when the value's
         # quality is marked as good
-        self.bgGoodColor = QColor(Qt.black)
+        self.bgGoodColor = QColor(Qt.GlobalColor.black)
         self.textGoodColor = QColor(Qt.GlobalColor.white)
         self.highlightGoodColor = QColor(Qt.magenta)
 
         # These colors are used for bad and fail
-        self.bgBadColor = QColor(Qt.black)
+        self.bgBadColor = QColor(Qt.GlobalColor.black)
         self.textBadColor = QColor(Qt.gray)
         self.highlightBadColor = QColor(Qt.darkMagenta)
 
