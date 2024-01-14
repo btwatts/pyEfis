@@ -110,8 +110,8 @@ class CheckEngine(QGraphicsView):
     def __init__(self, parent=None):
         super(CheckEngine, self).__init__(parent)
         self.setStyleSheet("background-color: rgba(0, 0, 0, 0%); border: 0px")
-        self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
+        self.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
         self.setRenderHint(QPainter.Antialiasing)
         self.setFocusPolicy(Qt.NoFocus)
         self.fontSize = 30

@@ -25,8 +25,8 @@ class Panel_Annunciator(QGraphicsView):
     def __init__(self, parent=None):
         super(Panel_Annunciator, self).__init__(parent)
         self.setStyleSheet("border: 0px")
-        self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
+        self.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
         self.setRenderHint(QPainter.Antialiasing)
         self.setFocusPolicy(Qt.NoFocus)
         self._Mode_Indicator = 0

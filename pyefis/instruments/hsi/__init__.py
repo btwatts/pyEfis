@@ -34,8 +34,8 @@ class HSI(QGraphicsView):
     def __init__(self, parent=None, font_size=15, fgcolor=Qt.GlobalColor.white, bgcolor=Qt.GlobalColor.black):
         super(HSI, self).__init__(parent)
         self.setStyleSheet("background-color: rgba(0, 0, 0, 0%); border: 0px")
-        self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
+        self.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
         self.setRenderHint(QPainter.Antialiasing)
         self.setFocusPolicy(Qt.NoFocus)
         self.fontSize = font_size
@@ -384,8 +384,8 @@ class DG_Tape(QGraphicsView):
     def __init__(self, parent=None):
         super(DG_Tape, self).__init__(parent)
         self.setStyleSheet("border: 0px")
-        self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
+        self.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
         self.setRenderHint(QPainter.Antialiasing)
         self.setFocusPolicy(Qt.NoFocus)
         self.fontsize = 20
