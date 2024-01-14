@@ -159,16 +159,16 @@ screens:
   EPFD:
     module: pyefis.screens.epfd
     title: Primary Flight Display
-    dbpath: ../data/CIFP/FAACIFP18
-    indexpath: ../data/CIFP/index.bin
+    dbpath: ./CIFP/FAACIFP18
+    indexpath: ./CIFP/index.bin
     check_engine: [MAP1, TACH1, OILP1, OILT1, FUELQT, FUELF1, CHTMAX1, EGTAVG1]
     update_period: .1
 
   PFD:
     module: pyefis.screens.pfd
     title: Primary Flight Display
-    dbpath: ../data/CIFP/FAACIFP18
-    indexpath: ../data/CIFP/index.bin
+    dbpath: ./CIFP/FAACIFP18
+    indexpath: ./CIFP/index.bin
     update_period: .1
 
   EMS:
