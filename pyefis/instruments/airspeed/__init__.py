@@ -145,8 +145,8 @@ class Airspeed(QWidget):
 
         if self.item.old or self.item.bad:
             warn_font = QFont("FixedSys", 30, QFont.Bold)
-            dial.setPen(QPen(QColor(Qt.gray)))
-            dial.setBrush(QBrush(QColor(Qt.gray)))
+            dial.setPen(QPen(QColor(Qt.GlobalColor.gray)))
+            dial.setBrush(QBrush(QColor(Qt.GlobalColor.gray)))
         else:
             dial.setPen(QPen(QColor(Qt.GlobalColor.white)))
             dial.setBrush(QBrush(QColor(Qt.GlobalColor.white)))

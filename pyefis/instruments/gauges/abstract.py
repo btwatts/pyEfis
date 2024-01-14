@@ -74,8 +74,8 @@ class AbstractGauge(QWidget):
         self.safeBadColor = QColor(Qt.darkGray)
         self.warnBadColor = QColor(Qt.darkYellow)
         self.alarmBadColor = QColor(Qt.darkRed)
-        self.textBadColor = QColor(Qt.gray)
-        self.penBadColor = QColor(Qt.gray)
+        self.textBadColor = QColor(Qt.GlobalColor.gray)
+        self.penBadColor = QColor(Qt.GlobalColor.gray)
         self.highlightBadColor = QColor(Qt.darkMagenta)
 
         # Annunciate changes the text color

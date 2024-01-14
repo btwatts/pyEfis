@@ -44,7 +44,7 @@ class Panel_Annunciator(QGraphicsView):
 
         self.scene = QGraphicsScene(0, 0, self.w, self.h)
         self.scene.addRect(0, 0, self.w, self.h,
-                           QPen(QColor(Qt.gray)), QBrush(QColor(Qt.GlobalColor.black)))
+                           QPen(QColor(Qt.GlobalColor.gray)), QBrush(QColor(Qt.GlobalColor.black)))
         self.scene.addRect(1, 1, self.w -2, self.h -2,
                            QPen(QColor(Qt.GlobalColor.black)), QBrush(QColor(Qt.transparent)))
         t = self.scene.addText(str(self.Warning_State_Label))
@@ -78,19 +78,19 @@ class Panel_Annunciator(QGraphicsView):
             if Mode == 0:
                 self._Mode_Indicator = 0
                 self.bcolor = QBrush(QColor(Qt.GlobalColor.black))
-                self.pcolor = QPen(QColor(Qt.gray))
+                self.pcolor = QPen(QColor(Qt.GlobalColor.gray))
             elif Mode == 1:
                 self._Mode_Indicator = 1
                 self.bcolor = QBrush(QColor(Qt.yellow))
-                self.pcolor = QPen(QColor(Qt.gray))
+                self.pcolor = QPen(QColor(Qt.GlobalColor.gray))
             elif Mode == 2:
                 self._Mode_Indicator = 2
                 self.bcolor = QBrush(QColor(Qt.red))
-                self.pcolor = QPen(QColor(Qt.gray))
+                self.pcolor = QPen(QColor(Qt.GlobalColor.gray))
             elif Mode == 3:
                 self._Mode_Indicator = 3
                 self.bcolor = QBrush(QColor(Qt.green))
-                self.pcolor = QPen(QColor(Qt.gray))
+                self.pcolor = QPen(QColor(Qt.GlobalColor.gray))
             self.redraw()
 
     def getWARNING_Name(self):

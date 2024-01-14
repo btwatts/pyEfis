@@ -135,8 +135,8 @@ class VSI_Dial(QWidget):
 
         if self.item.old or self.item.bad:
             warn_font = QFont("FixedSys", 30, QFont.Bold)
-            dialPen = QPen(QColor(Qt.gray))
-            dialBrush = QBrush(QColor(Qt.gray))
+            dialPen = QPen(QColor(Qt.GlobalColor.gray))
+            dialBrush = QBrush(QColor(Qt.GlobalColor.gray))
         else:
             dialPen = QPen(QColor(Qt.GlobalColor.white))
             dialBrush = QBrush(QColor(Qt.GlobalColor.white))
@@ -269,8 +269,8 @@ class VSI_PFD(QWidget):
             p.setBrush(Qt.magenta)
             p.drawEllipse(QRectF(2,y-5,10,10))
         except ZeroDivisionError:
-            p.setPen(Qt.gray)
-            p.setBrush(Qt.gray)
+            p.setPen(Qt.GlobalColor.gray)
+            p.setBrush(Qt.GlobalColor.gray)
             p.drawEllipse(QRectF(2,h/2,10,10))
 
     def getValue(self):

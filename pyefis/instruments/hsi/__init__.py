@@ -306,7 +306,7 @@ class HSI(QGraphicsView):
 
 
 class HeadingDisplay(QWidget):
-    def __init__(self, parent=None, font_size=15, fgcolor=Qt.gray, bgcolor=Qt.GlobalColor.black):
+    def __init__(self, parent=None, font_size=15, fgcolor=Qt.GlobalColor.gray, bgcolor=Qt.GlobalColor.black):
         super(HeadingDisplay, self).__init__(parent)
         self.setFocusPolicy(Qt.NoFocus)
         self.fontSize = font_size

@@ -210,7 +210,7 @@ class VerticalBar(AbstractGauge):
         pen.setWidth(1)
         p.setBrush(brush)
         if self.normalizeMode:
-            pen.setColor(QColor(Qt.gray))
+            pen.setColor(QColor(Qt.GlobalColor.gray))
             p.setPen(pen)
             nval = self._value - self.normalizeReference
             start = self.barTop + self.barHeight / 2

@@ -139,8 +139,8 @@ class TurnCoordinator(QWidget):
         p.setRenderHint(QPainter.Antialiasing)
         ball_rad = self.boxHeight / 2
         if self.alat_item.bad or self.alat_item.old:
-            pen = QPen(QColor(Qt.gray))
-            brush = QBrush(QColor(Qt.gray))
+            pen = QPen(QColor(Qt.GlobalColor.gray))
+            brush = QBrush(QColor(Qt.GlobalColor.gray))
         else:
             pen = QPen(QColor(Qt.GlobalColor.black))
             brush = QBrush(QColor(Qt.GlobalColor.black))
@@ -173,8 +173,8 @@ class TurnCoordinator(QWidget):
             return
         # the little airplane
         if self.rot_item.bad or self.rot_item.old:
-            pen.setColor(QColor(Qt.gray))
-            brush.setColor(QColor(Qt.gray))
+            pen.setColor(QColor(Qt.GlobalColor.gray))
+            brush.setColor(QColor(Qt.GlobalColor.gray))
         else:
             pen.setColor(QColor(Qt.GlobalColor.white))
             brush.setColor(QColor(Qt.GlobalColor.white))
