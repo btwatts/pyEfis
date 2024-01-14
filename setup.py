@@ -40,7 +40,7 @@ setup(
         "geomag==0.9.2015",
         "PyYAML==6.0",
         "pyavtools==0.1.0",
-        "PyQt5==5.15.9",
+        "PyQt6==5.15.9",
     ],
     extras_require={
         "build": ["build==0.10.0"],

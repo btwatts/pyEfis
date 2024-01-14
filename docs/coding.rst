@@ -82,7 +82,7 @@ argument.  We just use spaces because we use spaces.
 PyEfis uses CamelCase for Class names and pascalCase for member functions.  We
 use snake_case for class properties.
 
-PyEfis uses PyQt5 as it's primary development framework.  We don't do everything
+PyEfis uses PyQt6 as it's primary development framework.  We don't do everything
 exaclty the way that Qt applictions would normally be done but this is not a
 normal desktop type application.  We do a lot of absolute placement of widgets
 on the screen for better or for worse.  It is probably possible to change most

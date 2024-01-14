@@ -27,7 +27,7 @@ all of these dependencies.
 pyEfis has several dependencies.  The primary one is PyQt.  Installation
 instructions can be found here...
 
-https://www.riverbankcomputing.com/static/Docs/PyQt5/installation.html
+https://www.riverbankcomputing.com/static/Docs/PyQt6/installation.html
 
 On Deban based distributions apt should work.
 

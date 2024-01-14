@@ -18,7 +18,7 @@
 #       functionality since that is more user configurable
 
 try:
-    from PyQt5.QtCore import *
+    from PyQt6.QtCore import *
 except:
     from PyQt4.QtCore import *
 
