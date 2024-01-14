@@ -58,7 +58,7 @@ class AbstractGauge(QWidget):
         self.conversionFunction2 = lambda x: x
         self.decimalPlaces = 1
         # All these colors can be modified by the parent
-        self.outlineColor = QColor(Qt.darkGray)
+        self.outlineColor = QColor(Qt.GlobalColor.darkGray)
         # These are the colors that are used when the value's
         # quality is marked as good
         self.bgGoodColor = QColor(Qt.GlobalColor.black)
@@ -71,7 +71,7 @@ class AbstractGauge(QWidget):
 
         # These colors are used for bad and fail
         self.bgBadColor = QColor(Qt.GlobalColor.black)
-        self.safeBadColor = QColor(Qt.darkGray)
+        self.safeBadColor = QColor(Qt.GlobalColor.darkGray)
         self.warnBadColor = QColor(Qt.darkYellow)
         self.alarmBadColor = QColor(Qt.darkRed)
         self.textBadColor = QColor(Qt.GlobalColor.gray)

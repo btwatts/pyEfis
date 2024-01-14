@@ -67,7 +67,7 @@ class ValueDisplay(QWidget):
         self.conversionFunction = lambda x: x
 
         # These properties can be modified by the parent
-        self.outlineColor = QColor(Qt.darkGray)
+        self.outlineColor = QColor(Qt.GlobalColor.darkGray)
         # These are the colors that are used when the value's
         # quality is marked as good
         self.bgGoodColor = QColor(Qt.GlobalColor.black)

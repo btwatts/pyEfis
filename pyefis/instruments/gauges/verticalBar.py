@@ -216,7 +216,7 @@ class VerticalBar(AbstractGauge):
             start = self.barTop + self.barHeight / 2
             x = start - (nval * self.barHeight / self.normalizeRange)
         else:
-            pen.setColor(QColor(Qt.darkGray))
+            pen.setColor(QColor(Qt.GlobalColor.darkGray))
             p.setPen(pen)
             x = self.barTop + (self.barHeight - self.interpolate(self._value, self.barHeight))
         if x < self.barTop: x = self.barTop

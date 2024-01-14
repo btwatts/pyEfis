@@ -92,7 +92,7 @@ class HorizontalBar(AbstractGauge):
             p.drawRect(QRectF(x, self.barTop,
                               self.width() - x, self.barHeight))
         # Indicator Line
-        pen.setColor(QColor(Qt.darkGray))
+        pen.setColor(QColor(Qt.GlobalColor.darkGray))
         brush = QBrush(self.penColor)
         pen.setWidth(1)
         p.setPen(pen)
