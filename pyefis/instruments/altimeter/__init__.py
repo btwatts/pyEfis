@@ -161,8 +161,8 @@ class Altimeter_Tape(QGraphicsView):
     def __init__(self, parent=None, maxalt=50000, fontsize=15):
         super(Altimeter_Tape, self).__init__(parent)
         self.setStyleSheet("background: transparent")
-        self.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
-        self.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setRenderHint(QPainter.Antialiasing)
         self.setFocusPolicy(Qt.NoFocus)
         self.fontsize = fontsize

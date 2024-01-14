@@ -63,8 +63,8 @@ class AI(QGraphicsView):
         self.bankAngleMaximum = 25  # Largest bank angle that will be indicated
 
         self.setStyleSheet("border: 0px")
-        self.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
-        self.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setRenderHint(QPainter.Antialiasing)
         self.setFocusPolicy(Qt.NoFocus)
 
@@ -414,8 +414,8 @@ class FDTarget(QGraphicsView):
     def __init__(self, center, pixelsPerDeg, parent=None):
         super(FDTarget, self).__init__(parent)
         self.setStyleSheet("background-color: rgba(0, 0, 0, 0%); border: 0px")
-        self.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
-        self.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setRenderHint(QPainter.Antialiasing)
         self.setFocusPolicy(Qt.NoFocus)
         self.aicenter = center

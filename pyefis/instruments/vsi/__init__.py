@@ -297,8 +297,8 @@ class AS_Trend_Tape(QGraphicsView):
     def __init__(self, parent=None):
         super(AS_Trend_Tape, self).__init__(parent)
         self.setStyleSheet("border: 0px")
-        self.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
-        self.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setRenderHint(QPainter.Antialiasing)
         self.setFocusPolicy(Qt.NoFocus)
         self._airspeed = 0
@@ -369,8 +369,8 @@ class Alt_Trend_Tape(QGraphicsView):
     def __init__(self, parent=None):
         super(Alt_Trend_Tape, self).__init__(parent)
         self.setStyleSheet("border: 0px")
-        self.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
-        self.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setRenderHint(QPainter.Antialiasing)
         self.setFocusPolicy(Qt.NoFocus)
 

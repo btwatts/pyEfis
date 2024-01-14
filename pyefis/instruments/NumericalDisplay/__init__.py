@@ -22,8 +22,8 @@ class NumericalDisplay(QGraphicsView):
     def __init__(self, parent=None, total_decimals=3, scroll_decimal=1, font_family="Sans", font_size=15):
         super(NumericalDisplay, self).__init__(parent)
         self.setStyleSheet("border: 0px")
-        self.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
-        self.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setRenderHint(QPainter.Antialiasing)
         self.setFocusPolicy(Qt.NoFocus)
         self.scroll_decimal = scroll_decimal
@@ -188,8 +188,8 @@ class NumericalScrollDisplay(QGraphicsView):
     def __init__(self, parent=None, scroll_decimal=1, font_family="Sans", font_size=10):
         super(NumericalScrollDisplay, self).__init__()
         self.setStyleSheet("border: 0px")
-        self.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
-        self.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setRenderHint(QPainter.Antialiasing)
         self.setFocusPolicy(Qt.NoFocus)
         self.scroll_decimal = scroll_decimal

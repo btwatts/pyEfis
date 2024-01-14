@@ -206,8 +206,8 @@ class Airspeed_Tape(QGraphicsView):
         self.update_period = None
         # self.setStyleSheet("background-color: rgba(32, 32, 32, 0%)")
         self.setStyleSheet("background: transparent")
-        self.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
-        self.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setRenderHint(QPainter.Antialiasing)
         self.setFocusPolicy(Qt.NoFocus)
         self.item = fix.db.get_item("IAS")
