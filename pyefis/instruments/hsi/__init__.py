@@ -356,7 +356,7 @@ class HeadingDisplay(QWidget):
         else:
             heading_text = str(int(self._heading))
 
-        c.drawText(tr, Qt.AlignHCenter | Qt.AlignmentFlag.AlignVCenter, heading_text)
+        c.drawText(tr, Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter, heading_text)
 
     def getHeading(self):
         return self._heading
