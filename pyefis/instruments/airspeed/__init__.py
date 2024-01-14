@@ -134,7 +134,7 @@ class Airspeed(QWidget):
             count += 0.5
 
         if self.item.fail:
-            warn_font = QFont("FixedSys", 30, QFont.Bold)
+            warn_font = QFont("FixedSys", 30, QFont.Weight.Bold)
             dial.resetTransform()
             dial.setPen (QPen(QColor(Qt.GlobalColor.red)))
             dial.setBrush (QBrush(QColor(Qt.GlobalColor.red)))
@@ -144,7 +144,7 @@ class Airspeed(QWidget):
             return
 
         if self.item.old or self.item.bad:
-            warn_font = QFont("FixedSys", 30, QFont.Bold)
+            warn_font = QFont("FixedSys", 30, QFont.Weight.Bold)
             dial.setPen(QPen(QColor(Qt.GlobalColor.gray)))
             dial.setBrush(QBrush(QColor(Qt.GlobalColor.gray)))
         else:

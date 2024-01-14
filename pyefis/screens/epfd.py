@@ -115,7 +115,7 @@ class CheckEngine(QGraphicsView):
         self.setRenderHint(QPainter.RenderHint.Antialiasing)
         self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.fontSize = 30
-        font = QFont("FixedSys", 10, QFont.Bold)
+        font = QFont("FixedSys", 10, QFont.Weight.Bold)
         self.text = "Check Engine"
         t = QGraphicsSimpleTextItem (self.text)
         t.setFont (font)

@@ -106,7 +106,7 @@ class AI(QGraphicsView):
         # Get a failure scene ready in case it's needed
         self.fail_scene = QGraphicsScene(0, 0, sceneWidth, sceneHeight)
         self.fail_scene.addRect(0,0, sceneWidth, sceneHeight, QPen(QColor(Qt.GlobalColor.white)), QBrush(QColor(50,50,50)))
-        font = QFont("FixedSys", 80, QFont.Bold)
+        font = QFont("FixedSys", 80, QFont.Weight.Bold)
         t = self.fail_scene.addSimpleText("XXX", font)
         t.setPen (QPen(QColor(Qt.GlobalColor.red)))
         t.setBrush (QBrush(QColor(Qt.GlobalColor.red)))

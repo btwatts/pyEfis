@@ -84,7 +84,7 @@ class NumericalDisplay(QGraphicsView):
         # Get a failure scene ready in case it's needed
         self.fail_scene = QGraphicsScene(0, 0, self.w, self.h)
         self.fail_scene.addRect(0,0, self.w, self.h, QPen(QColor(Qt.GlobalColor.white)), QBrush(QColor(50,50,50)))
-        warn_font = QFont("FixedSys", 10, QFont.Bold)
+        warn_font = QFont("FixedSys", 10, QFont.Weight.Bold)
         t = self.fail_scene.addSimpleText("XXX", warn_font)
         t.setPen (QPen(QColor(Qt.GlobalColor.red)))
         t.setBrush (QBrush(QColor(Qt.GlobalColor.red)))

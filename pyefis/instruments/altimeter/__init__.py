@@ -54,7 +54,7 @@ class Altimeter(QWidget):
 
         # Setup Pens
         if self.item.old or self.item.bad:
-            warn_font = QFont("FixedSys", 30, QFont.Bold)
+            warn_font = QFont("FixedSys", 30, QFont.Weight.Bold)
             dialPen = QPen(QColor(Qt.GlobalColor.gray))
             dialBrush = QBrush(QColor(Qt.GlobalColor.gray))
         else:
@@ -98,7 +98,7 @@ class Altimeter(QWidget):
             count += 7.2
 
         if self.item.fail:
-            warn_font = QFont("FixedSys", 30, QFont.Bold)
+            warn_font = QFont("FixedSys", 30, QFont.Weight.Bold)
             dial.resetTransform()
             dial.setPen (QPen(QColor(Qt.GlobalColor.red)))
             dial.setBrush (QBrush(QColor(Qt.GlobalColor.red)))
