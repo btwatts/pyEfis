@@ -106,7 +106,7 @@ class VerticalBar(AbstractGauge):
         pen.setColor(self.valueColor)
         p.setPen(pen)
         p.setFont(self.bigFont)
-        p.drawText(self.valueTextRect, self.valueText, QTextOption(Qt.AlignCenter))
+        p.drawText(self.valueTextRect, self.valueText, QTextOption(Qt.AlignmentFlag.AlignCenter))
 
     def paintEvent(self, event):
         p = QPainter(self)
@@ -116,7 +116,7 @@ class VerticalBar(AbstractGauge):
         pen.setWidth(1)
         pen.setCapStyle(Qt.FlatCap)
         p.setPen(pen)
-        opt = QTextOption(Qt.AlignCenter)
+        opt = QTextOption(Qt.AlignmentFlag.AlignCenter)
         if self.showName:
             pen.setColor(self.textColor)
             p.setPen(pen)

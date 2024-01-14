@@ -139,7 +139,7 @@ class Airspeed(QWidget):
             dial.setPen (QPen(QColor(Qt.red)))
             dial.setBrush (QBrush(QColor(Qt.red)))
             dial.setFont (warn_font)
-            dial.drawText (0,0,w,h, Qt.AlignCenter, "XXX")
+            dial.drawText (0,0,w,h, Qt.AlignmentFlag.AlignCenter, "XXX")
             dial.restore()
             return
 
@@ -168,13 +168,13 @@ class Airspeed(QWidget):
             dial.setPen (QPen(QColor(255, 150, 0)))
             dial.setBrush (QBrush(QColor(255, 150, 0)))
             dial.setFont (warn_font)
-            dial.drawText (0,0,w,h, Qt.AlignCenter, "BAD")
+            dial.drawText (0,0,w,h, Qt.AlignmentFlag.AlignCenter, "BAD")
         elif self.item.old:
             dial.resetTransform()
             dial.setPen (QPen(QColor(255, 150, 0)))
             dial.setBrush (QBrush(QColor(255, 150, 0)))
             dial.setFont (warn_font)
-            dial.drawText (0,0,w,h, Qt.AlignCenter, "OLD")
+            dial.drawText (0,0,w,h, Qt.AlignmentFlag.AlignCenter, "OLD")
         """
 
         dial.restore()
@@ -375,8 +375,8 @@ class Airspeed_Box(QWidget):
         self.valueText = str(int(self.fix_item.value))
         self.fix_item.valueChanged[float].connect(self.setASData)
 
-        self.alignment = Qt.AlignLeft | Qt.AlignVCenter
-        self.valueAlignment = Qt.AlignRight  | Qt.AlignVCenter
+        self.alignment = Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter
+        self.valueAlignment = Qt.AlignmentFlag.AlignRight  | Qt.AlignmentFlag.AlignVCenter
         self.smallFontPercent = 0.4
         self.color = Qt.GlobalColor.white
         self.modeText = self.modes[self._modeIndicator]

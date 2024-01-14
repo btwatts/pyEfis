@@ -80,7 +80,7 @@ class VSI_Dial(QWidget):
                             - pixelsHigh / 2)
         p.setTransform(transform)
         p.drawText(0, 0, pixelsWide, pixelsHigh,
-                   Qt.AlignCenter, '0')
+                   Qt.AlignmentFlag.AlignCenter, '0')
 
         pixelsWide = fm.width("2.0")
         transform = QTransform()
@@ -90,7 +90,7 @@ class VSI_Dial(QWidget):
                             - pixelsHigh / 2)
         p.setTransform(transform)
         p.drawText(0, 0, pixelsWide, pixelsHigh,
-                   Qt.AlignCenter, '2.0')
+                   Qt.AlignmentFlag.AlignCenter, '2.0')
 
         p.restore()
         p.rotate(-90)
@@ -99,7 +99,7 @@ class VSI_Dial(QWidget):
             if each % 5 == 0:
                 p.drawLine(longLine)
                 if each != 20:
-                    p.drawText(textRect, Qt.AlignCenter,
+                    p.drawText(textRect, Qt.AlignmentFlag.AlignCenter,
                                str(each))
             else:
                 p.drawLine(shortLine)
@@ -111,7 +111,7 @@ class VSI_Dial(QWidget):
                 p.drawLine(longLine)
                 if each != 20:
                     p.scale(-1.0, -1.0)
-                    p.drawText(textRInv, Qt.AlignCenter,
+                    p.drawText(textRInv, Qt.AlignmentFlag.AlignCenter,
                                str(each))
                     p.scale(-1.0, -1.0)
             else:
@@ -151,7 +151,7 @@ class VSI_Dial(QWidget):
             dial.setPen (QPen(QColor(Qt.red)))
             dial.setBrush (QBrush(QColor(Qt.red)))
             dial.setFont (warn_font)
-            dial.drawText (0,0,w,h, Qt.AlignCenter, "XXX")
+            dial.drawText (0,0,w,h, Qt.AlignmentFlag.AlignCenter, "XXX")
             return
 
         # Needle Movement
@@ -170,13 +170,13 @@ class VSI_Dial(QWidget):
             dial.setPen (QPen(QColor(255, 150, 0)))
             dial.setBrush (QBrush(QColor(255, 150, 0)))
             dial.setFont (warn_font)
-            dial.drawText (0,0,w,h, Qt.AlignCenter, "BAD")
+            dial.drawText (0,0,w,h, Qt.AlignmentFlag.AlignCenter, "BAD")
         elif self.item.old:
             dial.resetTransform()
             dial.setPen (QPen(QColor(255, 150, 0)))
             dial.setBrush (QBrush(QColor(255, 150, 0)))
             dial.setFont (warn_font)
-            dial.drawText (0,0,w,h, Qt.AlignCenter, "OLD")
+            dial.drawText (0,0,w,h, Qt.AlignmentFlag.AlignCenter, "OLD")
         """
 
 
@@ -235,7 +235,7 @@ class VSI_PFD(QWidget):
 
         def drawMark(y, s):
             p.drawLine(0, qRound(y), qRound(w-pixelsWidth*1.5), qRound(y))
-            p.drawText(0, qRound(y - pixelsHigh/2), qRound(w-2), qRound(y + pixelsHigh/2), Qt.AlignRight, s)
+            p.drawText(0, qRound(y - pixelsHigh/2), qRound(w-2), qRound(y + pixelsHigh/2), Qt.AlignmentFlag.AlignRight, s)
 
         drawMark(h/2, "0")
         for mark in self.marks:

@@ -26,7 +26,7 @@ class StaticText(QWidget):
        a painter object and a redraw event handler"""
     def __init__(self, text="", fontsize=1.0, color=QColor(Qt.GlobalColor.white), parent=None):
         super(StaticText, self).__init__(parent)
-        self.alignment = Qt.AlignCenter
+        self.alignment = Qt.AlignmentFlag.AlignCenter
         self.fontPercent = fontsize
         self.text = text
         self.color = color
@@ -63,7 +63,7 @@ class ValueDisplay(QWidget):
         self.bad = False
         self.old = False
         self.annunciate = False
-        self.alignment = Qt.AlignLeft | Qt.AlignVCenter
+        self.alignment = Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter
         self.conversionFunction = lambda x: x
 
         # These properties can be modified by the parent

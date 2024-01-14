@@ -165,7 +165,7 @@ class TurnCoordinator(QWidget):
             p.setBrush (QBrush(QColor(Qt.red)))
             p.setFont (warn_font)
             p.drawText (QRectF(self.center.x()-self.boxHalfWidth,self.boxTop,self.boxHalfWidth*2,self.boxHeight),
-                    Qt.AlignCenter, "XXX")
+                    Qt.AlignmentFlag.AlignCenter, "XXX")
         else:
             p.drawEllipse(center, ball_rad, ball_rad)
 
@@ -192,7 +192,7 @@ class TurnCoordinator(QWidget):
             p.setBrush (QBrush(QColor(Qt.red)))
             p.setFont (warn_font)
             p.drawText (0,0,self.width(),self.height(),
-                    Qt.AlignCenter, "XXX")
+                    Qt.AlignmentFlag.AlignCenter, "XXX")
         else:
             poly = QPolygonF([QPointF(0, -thickness / 3),
                              QPointF(-x, -thickness / 8),

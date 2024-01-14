@@ -103,7 +103,7 @@ class Altimeter(QWidget):
             dial.setPen (QPen(QColor(Qt.red)))
             dial.setBrush (QBrush(QColor(Qt.red)))
             dial.setFont (warn_font)
-            dial.drawText (0,0,w,h, Qt.AlignCenter, "XXX")
+            dial.drawText (0,0,w,h, Qt.AlignmentFlag.AlignCenter, "XXX")
             return
 
         dial.setBrush(dialBrush)
@@ -136,13 +136,13 @@ class Altimeter(QWidget):
             dial.setPen (QPen(QColor(255, 150, 0)))
             dial.setBrush (QBrush(QColor(255, 150, 0)))
             dial.setFont (warn_font)
-            dial.drawText (0,0,w,h, Qt.AlignCenter, "BAD")
+            dial.drawText (0,0,w,h, Qt.AlignmentFlag.AlignCenter, "BAD")
         elif self.item.old:
             dial.resetTransform()
             dial.setPen (QPen(QColor(255, 150, 0)))
             dial.setBrush (QBrush(QColor(255, 150, 0)))
             dial.setFont (warn_font)
-            dial.drawText (0,0,w,h, Qt.AlignCenter, "OLD")
+            dial.drawText (0,0,w,h, Qt.AlignmentFlag.AlignCenter, "OLD")
         """
 
 

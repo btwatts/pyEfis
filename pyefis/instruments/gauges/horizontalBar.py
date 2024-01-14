@@ -50,14 +50,14 @@ class HorizontalBar(AbstractGauge):
 
         # Units
         p.setFont(self.smallFont)
-        opt = QTextOption(Qt.AlignRight)
+        opt = QTextOption(Qt.AlignmentFlag.AlignRight)
         p.drawText(self.valueTextRect, self.units, opt)
 
         # Main Value
         p.setFont(self.bigFont)
         pen.setColor(self.valueColor)
         p.setPen(pen)
-        opt = QTextOption(Qt.AlignLeft | Qt.AlignBottom)
+        opt = QTextOption(Qt.AlignmentFlag.AlignLeft | Qt.AlignBottom)
         p.drawText(self.valueTextRect, self.valueText, opt)
 
         # Draws the bar

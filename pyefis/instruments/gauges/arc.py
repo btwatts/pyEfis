@@ -116,7 +116,7 @@ class ArcGauge(AbstractGauge):
         f = QFont()
         f.setPixelSize(qRound(self.height() / 6))
         p.setFont(f)
-        opt = QTextOption(Qt.AlignLeft | Qt.AlignBottom)
+        opt = QTextOption(Qt.AlignmentFlag.AlignLeft | Qt.AlignBottom)
         #p.drawText(QPoint(centerX - (r - 40), centerY - (r - 40)), self.name)
         p.drawText(QPointF(self.width() / 20,f.pixelSize()), self.name)
 
