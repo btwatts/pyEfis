@@ -104,7 +104,7 @@ def main():
     hooks.initialize(config['hooks'])
 
     # Main program loop
-    result = app.exec_()
+    result = app.exec()
 
     # Clean up and get out
     fix.stop()
