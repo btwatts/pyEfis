@@ -65,8 +65,8 @@ class AI(QGraphicsView):
         self.setStyleSheet("border: 0px")
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.setRenderHint(QPainter.Antialiasing)
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setRenderHint(QPainter.RenderHint.Antialiasing)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
 
         pitch = fix.db.get_item("PITCH")
         pitch.valueChanged[float].connect(self.setPitchAngle)
