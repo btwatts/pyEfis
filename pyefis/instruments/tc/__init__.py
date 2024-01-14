@@ -61,9 +61,9 @@ class TurnCoordinator(QWidget):
 
         p = QPainter(self.background)
         p.setRenderHint(QPainter.Antialiasing)
-        pen = QPen(QColor(Qt.white))
+        pen = QPen(QColor(Qt.GlobalColor.white))
         pen.setWidth(2)
-        brush = QBrush(QColor(Qt.white))
+        brush = QBrush(QColor(Qt.GlobalColor.white))
         p.setPen(pen)
         self.center = QPointF(p.device().width() / 2, p.device().height() / 2)
         self.r = min(self.width(), self.height()) * .45
@@ -176,8 +176,8 @@ class TurnCoordinator(QWidget):
             pen.setColor(QColor(Qt.gray))
             brush.setColor(QColor(Qt.gray))
         else:
-            pen.setColor(QColor(Qt.white))
-            brush.setColor(QColor(Qt.white))
+            pen.setColor(QColor(Qt.GlobalColor.white))
+            brush.setColor(QColor(Qt.GlobalColor.white))
         p.setPen(pen)
         p.setBrush(brush)
 
@@ -250,9 +250,9 @@ class TurnCoordinator_Tape(QWidget):
 
         p = QPainter(self.background)
         p.setRenderHint(QPainter.Antialiasing)
-        pen = QPen(QColor(Qt.white))
+        pen = QPen(QColor(Qt.GlobalColor.white))
         pen.setWidth(2)
-        brush = QBrush(QColor(Qt.white))
+        brush = QBrush(QColor(Qt.GlobalColor.white))
         p.setPen(pen)
         self.center = QPointF(p.device().width() / 2, p.device().height() / 2)
         self.r = min(self.width(), self.height()) / 2 - 25

@@ -31,7 +31,7 @@ from pyefis import common
 
 
 class HSI(QGraphicsView):
-    def __init__(self, parent=None, font_size=15, fgcolor=Qt.white, bgcolor=Qt.black):
+    def __init__(self, parent=None, font_size=15, fgcolor=Qt.GlobalColor.white, bgcolor=Qt.black):
         super(HSI, self).__init__(parent)
         self.setStyleSheet("background-color: rgba(0, 0, 0, 0%); border: 0px")
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
@@ -404,7 +404,7 @@ class DG_Tape(QGraphicsView):
         w = self.width()
         h = self.height()
 
-        compassPen = QPen(QColor(Qt.white))
+        compassPen = QPen(QColor(Qt.GlobalColor.white))
         compassPen.setWidth(2)
 
         headingPen = QPen(QColor(Qt.red))
@@ -427,14 +427,14 @@ class DG_Tape(QGraphicsView):
                     t = self.scene.addText(str(i - 360))
                     t.setFont(f)
                     self.scene.setFont(f)
-                    t.setDefaultTextColor(QColor(Qt.white))
+                    t.setDefaultTextColor(QColor(Qt.GlobalColor.white))
                     t.setX(((i * 10) + w / 2) - t.boundingRect().width() / 2)
                     t.setY(h - t.boundingRect().height())
                 elif i < 1:
                     t = self.scene.addText(str(i + 360))
                     t.setFont(f)
                     self.scene.setFont(f)
-                    t.setDefaultTextColor(QColor(Qt.white))
+                    t.setDefaultTextColor(QColor(Qt.GlobalColor.white))
                     t.setX(((i * 10) + w / 2) - t.boundingRect().width() / 2)
                     t.setY(h - t.boundingRect().height())
                 else:
@@ -449,7 +449,7 @@ class DG_Tape(QGraphicsView):
                         t = self.scene.addText(str(i))
                         t.setFont(f)
                         self.scene.setFont(f)
-                        t.setDefaultTextColor(QColor(Qt.white))
+                        t.setDefaultTextColor(QColor(Qt.GlobalColor.white))
                         t.setX(((i * 10) + w / 2) - t.boundingRect().width() / 2)
                         t.setY(h - t.boundingRect().height())
             else:

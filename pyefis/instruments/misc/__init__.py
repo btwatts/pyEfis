@@ -24,7 +24,7 @@ class StaticText(QWidget):
     """Represents a simple static text display.  This is very simple and is
        really just here to keep the individual screens from having to have
        a painter object and a redraw event handler"""
-    def __init__(self, text="", fontsize=1.0, color=QColor(Qt.white), parent=None):
+    def __init__(self, text="", fontsize=1.0, color=QColor(Qt.GlobalColor.white), parent=None):
         super(StaticText, self).__init__(parent)
         self.alignment = Qt.AlignCenter
         self.fontPercent = fontsize
@@ -71,7 +71,7 @@ class ValueDisplay(QWidget):
         # These are the colors that are used when the value's
         # quality is marked as good
         self.bgGoodColor = QColor(Qt.black)
-        self.textGoodColor = QColor(Qt.white)
+        self.textGoodColor = QColor(Qt.GlobalColor.white)
         self.highlightGoodColor = QColor(Qt.magenta)
 
         # These colors are used for bad and fail

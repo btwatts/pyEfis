@@ -181,7 +181,7 @@ class VirtualVfr(AI):
         else:
             # print ("make new runway polygon %s"%key)
             poly = QPolygonF([QPoint(*p11), QPoint(*p12), QPoint(*p21), QPoint(*p22)])
-            pen = QPen(QColor(Qt.white))
+            pen = QPen(QColor(Qt.GlobalColor.white))
             brush = QBrush(QColor(Qt.black))
             if label[-1] == "W":
                 brush = QBrush(QColor("#000070"))
@@ -222,7 +222,7 @@ class VirtualVfr(AI):
                  centerline = self.display_objects[clkey]
                  centerline.setLine(cline)
             else:
-                clpen = QPen(QBrush(QColor(Qt.white)), VirtualVfr.CENTERLINE_WIDTH, Qt.DashLine)
+                clpen = QPen(QBrush(QColor(Qt.GlobalColor.white)), VirtualVfr.CENTERLINE_WIDTH, Qt.DashLine)
                 clpen.setWidth(VirtualVfr.CENTERLINE_WIDTH)
                 centerline = self.scene.addLine (cline, clpen)
                 centerline.setX(self.scene.width()/2)
@@ -247,7 +247,7 @@ class VirtualVfr(AI):
                     # Create new label
                     qlabel = self.scene.addSimpleText(label, font)
                     qlabel.setPen(QPen(QColor(Qt.black)))
-                    qlabel.setBrush(QBrush(QColor(Qt.white)))
+                    qlabel.setBrush(QBrush(QColor(Qt.GlobalColor.white)))
                     qlabel.setX(self.scene.width()/2 + left_bottom[0])
                     qlabel.setY(self.scene.height()/2 + left_bottom[1])
                     qlabel.setZValue(0)
@@ -287,7 +287,7 @@ class VirtualVfr(AI):
                  extendedline.setLine(eline)
             else:
                 extendedline = self.scene.addLine (eline,
-                    QPen(QColor(Qt.white), 1, Qt.DashLine))
+                    QPen(QColor(Qt.GlobalColor.white), 1, Qt.DashLine))
                 extendedline.setX(self.scene.width()/2)
                 extendedline.setY(self.scene.height()/2)
                 extendedline.setZValue(0)
@@ -316,9 +316,9 @@ class VirtualVfr(AI):
             y = left_bottom[1] - VirtualVfr.PAPI_YOFFSET
             x += self.scene.width()/2
             y += self.scene.height()/2
-            wpen = QPen(QColor(Qt.white))
+            wpen = QPen(QColor(Qt.GlobalColor.white))
             rpen = QPen(QColor(Qt.red))
-            wbsh = QBrush(QColor(Qt.white))
+            wbsh = QBrush(QColor(Qt.GlobalColor.white))
             rbsh = QBrush(QColor(Qt.red))
             if pkey in self.display_objects:
                 lights = self.display_objects[pkey]
@@ -386,7 +386,7 @@ class VirtualVfr(AI):
             font = QFont(VirtualVfr.AIRPORT_FONT_FAMILY, VirtualVfr.AIRPORT_FONT_SIZE, QFont.Bold)
             ap = self.scene.addSimpleText(airport_id, font)
             ap.setPen(QPen(QColor(Qt.blue)))
-            ap.setBrush(QBrush(QColor(Qt.white)))
+            ap.setBrush(QBrush(QColor(Qt.GlobalColor.white)))
             ap.setZValue(0)
             self.display_objects[akey] = ap
         rect = ap.boundingRect()
@@ -418,7 +418,7 @@ class VirtualVfr(AI):
             font = QFont(VirtualVfr.AIRPORT_FONT_FAMILY, VirtualVfr.AIRPORT_FONT_SIZE-2, QFont.Bold)
             vtlabel = self.scene.addSimpleText(navaid_id, font)
             vtlabel.setPen(QPen(QColor(Qt.blue)))
-            vtlabel.setBrush(QBrush(QColor(Qt.white)))
+            vtlabel.setBrush(QBrush(QColor(Qt.GlobalColor.white)))
             vtlabel.setZValue(0)
             vticon = self.scene.addPixmap (QPixmap (VirtualVfr.VORTAC_ICON_PATH))
             self.display_objects[vlkey] = vtlabel

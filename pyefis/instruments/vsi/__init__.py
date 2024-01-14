@@ -50,7 +50,7 @@ class VSI_Dial(QWidget):
         p = QPainter(self.background)
         p.setRenderHint(QPainter.Antialiasing)
         p.setFont(f)
-        pen = QPen(QColor(Qt.white))
+        pen = QPen(QColor(Qt.GlobalColor.white))
         pen.setWidth(2)
         p.setPen(pen)
         self.center = QPointF(p.device().width() / 2, p.device().height() / 2)
@@ -138,8 +138,8 @@ class VSI_Dial(QWidget):
             dialPen = QPen(QColor(Qt.gray))
             dialBrush = QBrush(QColor(Qt.gray))
         else:
-            dialPen = QPen(QColor(Qt.white))
-            dialBrush = QBrush(QColor(Qt.white))
+            dialPen = QPen(QColor(Qt.GlobalColor.white))
+            dialBrush = QBrush(QColor(Qt.GlobalColor.white))
         dialPen.setWidth(2)
         dial.setPen(dialPen)
         dial.setFont(f)
@@ -219,10 +219,10 @@ class VSI_PFD(QWidget):
         p = QPainter(self.background)
         p.setRenderHint(QPainter.Antialiasing)
         p.setFont(f)
-        pen = QPen(QColor(Qt.white))
+        pen = QPen(QColor(Qt.GlobalColor.white))
         pen.setWidth(1)
         p.setPen(pen)
-        p.setBrush(QColor(Qt.white))
+        p.setBrush(QColor(Qt.GlobalColor.white))
         pixelsWidth = fm.width("0")
         pixelsHigh = fm.height()
 
@@ -310,7 +310,7 @@ class AS_Trend_Tape(QGraphicsView):
         w = self.width()
         h = self.height()
         self.pph = 10
-        self.zeroPen = QPen(QColor(Qt.white))
+        self.zeroPen = QPen(QColor(Qt.GlobalColor.white))
         self.zeroPen.setWidth(4)
 
         self.scene = QGraphicsScene(0, 0, w, h)
@@ -342,7 +342,7 @@ class AS_Trend_Tape(QGraphicsView):
         self.scene.addRect(self.width() / 2, self.height() / 2,
                            self.width() / 2 + 5,
                            self._airspeed_diff * -self.pph,
-                           QPen(QColor(Qt.white)), QBrush(QColor(Qt.white)))
+                           QPen(QColor(Qt.GlobalColor.white)), QBrush(QColor(Qt.GlobalColor.white)))
 
         self.setScene(self.scene)
 
@@ -408,14 +408,14 @@ class Alt_Trend_Tape(QGraphicsView):
                            QPen(QColor(Qt.black)), QBrush(QColor(Qt.black)))
         t = self.scene.addText("VSI")
         t.setFont(f)
-        t.setDefaultTextColor(QColor(Qt.white))
+        t.setDefaultTextColor(QColor(Qt.GlobalColor.white))
         t.setX(0)
         t.setY(0)
         y = t.boundingRect().height() * .6
 
         self.vstext = self.scene.addText(str(self._vs))
         self.vstext.setFont(bf)
-        self.vstext.setDefaultTextColor(QColor(Qt.white))
+        self.vstext.setDefaultTextColor(QColor(Qt.GlobalColor.white))
         self.vstext.setX(0)
         self.vstext.setY(y)
         self.setVsText()
@@ -425,14 +425,14 @@ class Alt_Trend_Tape(QGraphicsView):
 
         self.pph = float(remaining_height) / (self.maxvs * 2)
 
-        tapePen = QPen(QColor(Qt.white))
+        tapePen = QPen(QColor(Qt.GlobalColor.white))
         for i in range(self.maxvs, -self.maxvs - 1, -100):
             y = self.y_offset(i)
             if i % 200 == 0:
                 self.scene.addLine(w_2 + 5, y, w, y, tapePen)
                 t = self.scene.addText(str(int(i / 100)))
                 t.setFont(f)
-                t.setDefaultTextColor(QColor(Qt.white))
+                t.setDefaultTextColor(QColor(Qt.GlobalColor.white))
                 t.setX(0)
                 t.setY(y - t.boundingRect().height() / 2)
             else:
@@ -471,8 +471,8 @@ class Alt_Trend_Tape(QGraphicsView):
                 self.indicator_line = None
         elif self.indicator_line is None:
             self.indicator_line = self.scene.addRect(x, top, width, height,
-                                                     QPen(QColor(Qt.white)),
-                                                     QBrush(QColor(Qt.white)))
+                                                     QPen(QColor(Qt.GlobalColor.white)),
+                                                     QBrush(QColor(Qt.GlobalColor.white)))
         else:
             self.indicator_line.setRect(x, top, width, height)
         self.setVsText()
@@ -496,7 +496,7 @@ class Alt_Trend_Tape(QGraphicsView):
             self.vstext.setDefaultTextColor (QColor(255, 150, 0))
         else:
             self.vstext.setPlainText(str(int(self._vs)))
-            self.vstext.setDefaultTextColor (QColor(Qt.white))
+            self.vstext.setDefaultTextColor (QColor(Qt.GlobalColor.white))
 
     def getBad(self):
         return self._bad

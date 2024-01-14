@@ -39,7 +39,7 @@ class Panel_Annunciator(QGraphicsView):
         self.f.setBold(True)
         self.f.setPixelSize(16)
 
-        dialPen = QPen(QColor(Qt.white))
+        dialPen = QPen(QColor(Qt.GlobalColor.white))
         dialPen.setWidth(5)
 
         self.scene = QGraphicsScene(0, 0, self.w, self.h)
@@ -50,7 +50,7 @@ class Panel_Annunciator(QGraphicsView):
         t = self.scene.addText(str(self.Warning_State_Label))
         t.setFont(self.f)
         self.scene.setFont(self.f)
-        t.setDefaultTextColor(QColor(Qt.white))
+        t.setDefaultTextColor(QColor(Qt.GlobalColor.white))
         t.setX((self.w - t.boundingRect().width()) / 2)
         t.setY((self.h - t.boundingRect().height()) / 2)
         self.setScene(self.scene)
@@ -64,7 +64,7 @@ class Panel_Annunciator(QGraphicsView):
         t = self.scene.addText(str(self.Warning_State_Label))
         t.setFont(self.f)
         self.scene.setFont(self.f)
-        t.setDefaultTextColor(QColor(Qt.white))
+        t.setDefaultTextColor(QColor(Qt.GlobalColor.white))
         t.setX((self.w - t.boundingRect().width()) / 2)
         t.setY(((self.h - t.boundingRect().height()) / 2))
 

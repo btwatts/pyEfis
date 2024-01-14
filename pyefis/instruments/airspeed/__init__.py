@@ -55,15 +55,15 @@ class Airspeed(QWidget):
         f.setPixelSize(fs)
         fontMetrics = QFontMetricsF(f)
 
-        dialPen = QPen(QColor(Qt.white))
+        dialPen = QPen(QColor(Qt.GlobalColor.white))
         dialPen.setWidth(2)
 
-        needleBrush = QBrush(QColor(Qt.white))
+        needleBrush = QBrush(QColor(Qt.GlobalColor.white))
 
         vnePen = QPen(QColor(Qt.red))
         vnePen.setWidth(6)
 
-        vsoPen = QPen(QColor(Qt.white))
+        vsoPen = QPen(QColor(Qt.GlobalColor.white))
         vsoPen.setWidth(4)
 
         vnoPen = QPen(QColor(Qt.green))
@@ -148,8 +148,8 @@ class Airspeed(QWidget):
             dial.setPen(QPen(QColor(Qt.gray)))
             dial.setBrush(QBrush(QColor(Qt.gray)))
         else:
-            dial.setPen(QPen(QColor(Qt.white)))
-            dial.setBrush(QBrush(QColor(Qt.white)))
+            dial.setPen(QPen(QColor(Qt.GlobalColor.white)))
+            dial.setBrush(QBrush(QColor(Qt.GlobalColor.white)))
         #Needle Movement
         needle = QPolygon([QPoint(5, 0), QPoint(0, +5), QPoint(-5, 0),
                             QPoint(0, -(radius-15))])
@@ -243,7 +243,7 @@ class Airspeed_Tape(QGraphicsView):
         tape_height = self.max * self.pph + h
         tape_start = self.max * self.pph + h/2
 
-        dialPen = QPen(QColor(Qt.white))
+        dialPen = QPen(QColor(Qt.GlobalColor.white))
 
         self.scene = QGraphicsScene(0, 0, w, tape_height)
         x = self.scene.addRect(0, 0, w, tape_height,
@@ -260,7 +260,7 @@ class Airspeed_Tape(QGraphicsView):
         # White Bar
         r = QRectF(QPointF(self.markWidth / 2, -self.Vfe * self.pph + tape_start),
                    QPointF(self.markWidth,     -self.Vs0 * self.pph + tape_start))
-        x = self.scene.addRect(r, QPen(Qt.white), QBrush(Qt.white))
+        x = self.scene.addRect(r, QPen(Qt.GlobalColor.white), QBrush(Qt.GlobalColor.white))
         x.setOpacity(self.foregroundOpacity)
 
 
@@ -279,7 +279,7 @@ class Airspeed_Tape(QGraphicsView):
                 t = self.scene.addText(str(i))
                 t.setFont(f)
                 self.scene.setFont(f)
-                t.setDefaultTextColor(QColor(Qt.white))
+                t.setDefaultTextColor(QColor(Qt.GlobalColor.white))
                 t.setX(w - t.boundingRect().width())
                 t.setY(((- i * self.pph) + tape_start)
                        - t.boundingRect().height() / 2)
@@ -333,7 +333,7 @@ class Airspeed_Tape(QGraphicsView):
         p = QPainter(self.viewport())
         p.setRenderHint(QPainter.Antialiasing)
 
-        marks = QPen(Qt.white, 1)
+        marks = QPen(Qt.GlobalColor.white, 1)
         p.translate(self.numeric_box_pos.x(), self.numeric_box_pos.y())
         p.setPen(marks)
         p.setBrush(QBrush(Qt.black))
@@ -378,7 +378,7 @@ class Airspeed_Box(QWidget):
         self.alignment = Qt.AlignLeft | Qt.AlignVCenter
         self.valueAlignment = Qt.AlignRight  | Qt.AlignVCenter
         self.smallFontPercent = 0.4
-        self.color = Qt.white
+        self.color = Qt.GlobalColor.white
         self.modeText = self.modes[self._modeIndicator]
         hmi.actions.setAirspeedMode.connect(self.setMode)
 

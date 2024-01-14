@@ -58,8 +58,8 @@ class Altimeter(QWidget):
             dialPen = QPen(QColor(Qt.gray))
             dialBrush = QBrush(QColor(Qt.gray))
         else:
-            dialPen = QPen(QColor(Qt.white))
-            dialBrush = QBrush(QColor(Qt.white))
+            dialPen = QPen(QColor(Qt.GlobalColor.white))
+            dialBrush = QBrush(QColor(Qt.GlobalColor.white))
         dialPen.setWidth(2)
 
         # Dial Setup
@@ -187,7 +187,7 @@ class Altimeter_Tape(QGraphicsView):
         f.setPixelSize(self.fontsize)
         self.height_pixel = self.maxalt*self.pph + h
 
-        dialPen = QPen(QColor(Qt.white))
+        dialPen = QPen(QColor(Qt.GlobalColor.white))
         dialPen.setWidth(2)
 
         self.scene = QGraphicsScene(0, 0, w, self.height_pixel)
@@ -203,7 +203,7 @@ class Altimeter_Tape(QGraphicsView):
                 t = self.scene.addText(str(i))
                 t.setFont(f)
                 self.scene.setFont(f)
-                t.setDefaultTextColor(QColor(Qt.white))
+                t.setDefaultTextColor(QColor(Qt.GlobalColor.white))
                 t.setX(0)
                 t.setY(y - t.boundingRect().height() / 2)
                 t.setOpacity(self.foregroundOpacity)
@@ -247,7 +247,7 @@ class Altimeter_Tape(QGraphicsView):
         p = QPainter(self.viewport())
         p.setRenderHint(QPainter.Antialiasing)
 
-        marks = QPen(Qt.white, 1)
+        marks = QPen(Qt.GlobalColor.white, 1)
         p.translate(self.numeric_box_pos.x(), self.numeric_box_pos.y())
         p.setPen(marks)
         p.setBrush(QBrush(Qt.black))

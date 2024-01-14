@@ -190,7 +190,7 @@ class VerticalBar(AbstractGauge):
 
         # Draw Peak Value Line and text
         if self.peakMode:
-            pen.setColor(QColor(Qt.white))
+            pen.setColor(QColor(Qt.GlobalColor.white))
             brush = QBrush(self.peakColor)
             pen.setWidth(1)
             p.setPen(pen)

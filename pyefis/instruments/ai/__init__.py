@@ -105,7 +105,7 @@ class AI(QGraphicsView):
             self.bankAngleRadius = self.height() / 3
         # Get a failure scene ready in case it's needed
         self.fail_scene = QGraphicsScene(0, 0, sceneWidth, sceneHeight)
-        self.fail_scene.addRect(0,0, sceneWidth, sceneHeight, QPen(QColor(Qt.white)), QBrush(QColor(50,50,50)))
+        self.fail_scene.addRect(0,0, sceneWidth, sceneHeight, QPen(QColor(Qt.GlobalColor.white)), QBrush(QColor(50,50,50)))
         font = QFont("FixedSys", 80, QFont.Bold)
         t = self.fail_scene.addSimpleText("XXX", font)
         t.setPen (QPen(QColor(Qt.red)))
@@ -152,11 +152,11 @@ class AI(QGraphicsView):
         self.setScene(self.scene)
 
         #Draw the main horizontal line
-        pen = QPen(QColor(Qt.white))
+        pen = QPen(QColor(Qt.GlobalColor.white))
         pen.setWidth(2)
         self.scene.addLine(0, sceneHeight / 2, sceneWidth, sceneHeight / 2, pen)
         # draw the degree hash marks
-        pen.setColor(Qt.white)
+        pen.setColor(Qt.GlobalColor.white)
         w = self.scene.width()
         h = self.scene.height()
         f = QFont()
@@ -177,7 +177,7 @@ class AI(QGraphicsView):
                 t = self.scene.addText(str(i))
                 t.setFont(f)
                 self.scene.setFont(f)
-                t.setDefaultTextColor(Qt.white)
+                t.setDefaultTextColor(Qt.GlobalColor.white)
                 t.setX(right + 5)
                 t.setY(y - t.boundingRect().height() / 2)
                 t.setZValue(1)
@@ -186,7 +186,7 @@ class AI(QGraphicsView):
                 t = self.scene.addText(str(i))
                 t.setFont(f)
                 self.scene.setFont(f)
-                t.setDefaultTextColor(Qt.white)
+                t.setDefaultTextColor(Qt.GlobalColor.white)
                 t.setX(left - (t.boundingRect().width() + 5))
                 t.setY(y - t.boundingRect().height() / 2)
                 t.setZValue(1)
@@ -224,10 +224,10 @@ class AI(QGraphicsView):
         p.drawRect(QRectF(w - w / 4 - w / 6, h / 2 - 3, w / 6, 6))
         p.drawEllipse(QRectF(w / 2 - 3, h / 2 - 3, 9, 9))
         # p.setPen(QColor(Qt.black))
-        # p.setBrush(QColor(Qt.white))
+        # p.setBrush(QColor(Qt.GlobalColor.white))
 
         m = self.bankMarkSize
-        p.setBrush(QColor(Qt.white))
+        p.setBrush(QColor(Qt.GlobalColor.white))
         p.translate(w / 2, h/2 - r)
         triangle = QPolygonF([QPointF(m,  m*2),
                              QPointF(-m, m*2),
@@ -269,24 +269,24 @@ class AI(QGraphicsView):
         # Put the static overlay image on the view
         p.drawImage(self.rect(), self.overlay)
 
-        pen = QPen(Qt.white)
+        pen = QPen(Qt.GlobalColor.white)
         pen.setWidth(1)
         p.setPen(pen)
-        p.setBrush(QColor(Qt.white))
-        marks = QPen(Qt.white)
+        p.setBrush(QColor(Qt.GlobalColor.white))
+        marks = QPen(Qt.GlobalColor.white)
 
         p.translate(w / 2, h / 2)
 
         # Slip / Skid ball
         p.setPen(QColor(Qt.black))
-        p.setBrush(QColor(Qt.white))
+        p.setBrush(QColor(Qt.GlobalColor.white))
         p.drawEllipse(QPointF(self._latAccel * -m*12, -r + m*3), m*0.8, m*0.8)
 
         p.rotate(self._rollAngle * -1.0)
         # Add moving Bank Angle Markers
         marks.setWidth(2)
         p.setPen(marks)
-        p.setBrush(QColor(Qt.white))
+        p.setBrush(QColor(Qt.GlobalColor.white))
         smallMarks = [10, 20, 45]
         largeMarks = [30, 60]
         shortLine = QLineF(0, -r, 0, -(r-m))

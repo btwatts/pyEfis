@@ -49,7 +49,7 @@ class NumericalDisplay(QGraphicsView):
         self.scene = QGraphicsScene(0, 0, self.w, self.h)
         border_width = 1
         top = (self.h - font_height) / 2
-        rect_pen = QPen(QColor(Qt.white))
+        rect_pen = QPen(QColor(Qt.GlobalColor.white))
         rect_pen.setWidth (border_width)
         self.scene.addRect(0, top, self.w, font_height,
                            rect_pen, QBrush(QColor(Qt.black)))
@@ -65,8 +65,8 @@ class NumericalDisplay(QGraphicsView):
         if self._bad or self._old:
             prest = ''
         self.pre_scroll_text = self.scene.addSimpleText (prest, self.f)
-        self.pre_scroll_text.setPen(QPen(QColor(Qt.white)))
-        self.pre_scroll_text.setBrush(QBrush(QColor(Qt.white)))
+        self.pre_scroll_text.setPen(QPen(QColor(Qt.GlobalColor.white)))
+        self.pre_scroll_text.setBrush(QBrush(QColor(Qt.GlobalColor.white)))
         self.pre_scroll_text.setX (font_width / 2.0)
         self.pre_scroll_text.setY ((self.h-font_height)/2.0)
 
@@ -83,7 +83,7 @@ class NumericalDisplay(QGraphicsView):
 
         # Get a failure scene ready in case it's needed
         self.fail_scene = QGraphicsScene(0, 0, self.w, self.h)
-        self.fail_scene.addRect(0,0, self.w, self.h, QPen(QColor(Qt.white)), QBrush(QColor(50,50,50)))
+        self.fail_scene.addRect(0,0, self.w, self.h, QPen(QColor(Qt.GlobalColor.white)), QBrush(QColor(50,50,50)))
         warn_font = QFont("FixedSys", 10, QFont.Bold)
         t = self.fail_scene.addSimpleText("XXX", warn_font)
         t.setPen (QPen(QColor(Qt.red)))
@@ -145,7 +145,7 @@ class NumericalDisplay(QGraphicsView):
             self.pre_scroll_text.setText('')
             self.scrolling_area.hide()
         else:
-            self.pre_scroll_text.setBrush(QBrush(QColor(Qt.white)))
+            self.pre_scroll_text.setBrush(QBrush(QColor(Qt.GlobalColor.white)))
             self.scrolling_area.show()
 
     def getBad(self):
@@ -219,8 +219,8 @@ class NumericalScrollDisplay(QGraphicsView):
                 text = text + "0"*add0s
             t = self.scene.addSimpleText(text, self.f)
             t.setX(2)
-            t.setPen(QPen(QColor(Qt.white)))
-            t.setBrush(QBrush(QColor(Qt.white)))
+            t.setPen(QPen(QColor(Qt.GlobalColor.white)))
+            t.setBrush(QBrush(QColor(Qt.GlobalColor.white)))
             t.setY(y)
         for i in range(9,0,-1):
             sv = i-10
@@ -232,8 +232,8 @@ class NumericalScrollDisplay(QGraphicsView):
                 add0s = self.scroll_decimal - len(text)
                 text = text + "0"*add0s
             t = self.scene.addSimpleText(text, self.f)
-            t.setPen(QPen(QColor(Qt.white)))
-            t.setBrush(QBrush(QColor(Qt.white)))
+            t.setPen(QPen(QColor(Qt.GlobalColor.white)))
+            t.setBrush(QBrush(QColor(Qt.GlobalColor.white)))
             t.setX(2)
             t.setY(y)
         self.setScene (self.scene)
