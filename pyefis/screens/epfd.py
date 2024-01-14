@@ -112,8 +112,8 @@ class CheckEngine(QGraphicsView):
         self.setStyleSheet("background-color: rgba(0, 0, 0, 0%); border: 0px")
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.setRenderHint(QPainter.Antialiasing)
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setRenderHint(QPainter.RenderHint.Antialiasing)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.fontSize = 30
         font = QFont("FixedSys", 10, QFont.Bold)
         self.text = "Check Engine"

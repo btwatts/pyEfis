@@ -213,7 +213,7 @@ class AI(QGraphicsView):
         self.map = QPixmap(self.width(), self.height())
         self.map.fill(Qt.transparent)
         p = QPainter(self.map)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
         # change width and height to the view instead of the scene
         w = self.width()
         h = self.height()
@@ -265,7 +265,7 @@ class AI(QGraphicsView):
         r = self.bankAngleRadius
         m = self.bankMarkSize
         p = QPainter(self.viewport())
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
         # Put the static overlay image on the view
         p.drawImage(self.rect(), self.overlay)
 
@@ -416,8 +416,8 @@ class FDTarget(QGraphicsView):
         self.setStyleSheet("background-color: rgba(0, 0, 0, 0%); border: 0px")
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.setRenderHint(QPainter.Antialiasing)
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setRenderHint(QPainter.RenderHint.Antialiasing)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.aicenter = center
         self.pixelsPerDeg = pixelsPerDeg
 

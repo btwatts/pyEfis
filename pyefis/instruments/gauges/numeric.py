@@ -49,7 +49,7 @@ class NumericDisplay(AbstractGauge):
 
     def paintEvent(self, event):
         p = QPainter(self)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
 
         pen = QPen()
         pen.setWidth(1)

@@ -30,7 +30,7 @@ class Airspeed(QWidget):
     def __init__(self, parent=None, fontsize=20):
         super(Airspeed, self).__init__(parent)
         self.setStyleSheet("border: 0px")
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.fontsize = fontsize
         self._airspeed = 0
         self.item = fix.db.get_item("IAS")
@@ -44,7 +44,7 @@ class Airspeed(QWidget):
         w = self.width()
         h = self.height()
         dial = QPainter(self)
-        dial.setRenderHint(QPainter.Antialiasing)
+        dial.setRenderHint(QPainter.RenderHint.Antialiasing)
 
         #Draw the Black Background
         dial.fillRect(0, 0, w, h, Qt.GlobalColor.black)
@@ -208,8 +208,8 @@ class Airspeed_Tape(QGraphicsView):
         self.setStyleSheet("background: transparent")
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.setRenderHint(QPainter.Antialiasing)
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setRenderHint(QPainter.RenderHint.Antialiasing)
+        self.setFocusPolicy(Qt.RenderHint.NoFocus)
         self.item = fix.db.get_item("IAS")
         self._airspeed = self.item.value
 
@@ -331,7 +331,7 @@ class Airspeed_Tape(QGraphicsView):
         w = self.width()
         h = self.height()
         p = QPainter(self.viewport())
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
 
         marks = QPen(Qt.GlobalColor.white, 1)
         p.translate(self.numeric_box_pos.x(), self.numeric_box_pos.y())
@@ -395,7 +395,7 @@ class Airspeed_Box(QWidget):
 
     def paintEvent(self, event):
         p = QPainter(self)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
 
         pen = QPen()
         pen.setWidth(1)

@@ -29,7 +29,7 @@ class Altimeter(QWidget):
     def __init__(self, parent=None):
         super(Altimeter, self).__init__(parent)
         self.setStyleSheet("border: 0px")
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self._altimeter = 0
         self.item = fix.db.get_item("ALT")
         self.item.valueChanged[float].connect(self.setAltimeter)
@@ -43,7 +43,7 @@ class Altimeter(QWidget):
         w = self.width()
         h = self.height()
         dial = QPainter(self)
-        dial.setRenderHint(QPainter.Antialiasing)
+        dial.setRenderHint(QPainter.RenderHint.Antialiasing)
         radius = int(round(min(w,h)*.45))
         diameter = radius * 2
         center_x = w/2
@@ -163,8 +163,8 @@ class Altimeter_Tape(QGraphicsView):
         self.setStyleSheet("background: transparent")
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.setRenderHint(QPainter.Antialiasing)
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setRenderHint(QPainter.RenderHint.Antialiasing)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.fontsize = fontsize
         self.item = fix.db.get_item("ALT")
         self._altimeter = self.item.value
@@ -245,7 +245,7 @@ class Altimeter_Tape(QGraphicsView):
         w = self.width()
         h = self.height()
         p = QPainter(self.viewport())
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
 
         marks = QPen(Qt.GlobalColor.white, 1)
         p.translate(self.numeric_box_pos.x(), self.numeric_box_pos.y())

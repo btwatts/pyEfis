@@ -39,7 +39,7 @@ class HorizontalBar(AbstractGauge):
 
     def paintEvent(self, event):
         p = QPainter(self)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
         pen = QPen()
         pen.setWidth(1)
         pen.setCapStyle(Qt.FlatCap)
@@ -61,7 +61,7 @@ class HorizontalBar(AbstractGauge):
         p.drawText(self.valueTextRect, self.valueText, opt)
 
         # Draws the bar
-        p.setRenderHint(QPainter.Antialiasing, False)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing, False)
         pen.setColor(self.safeColor)
         brush = self.safeColor
         p.setPen(pen)

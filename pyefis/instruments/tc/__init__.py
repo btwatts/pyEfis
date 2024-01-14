@@ -34,7 +34,7 @@ class TurnCoordinator(QWidget):
         else:
             pass
             #self.setStyleSheet("background-color: rgba(0, 0, 0, 0%); border: 0px")
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self._rate = 0.0
         self._latAcc = 0.0
         if filter_depth:
@@ -60,7 +60,7 @@ class TurnCoordinator(QWidget):
         self.background = QPixmap(self.width(), self.height())
 
         p = QPainter(self.background)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
         pen = QPen(QColor(Qt.GlobalColor.white))
         pen.setWidth(2)
         brush = QBrush(QColor(Qt.GlobalColor.white))
@@ -123,7 +123,7 @@ class TurnCoordinator(QWidget):
     def paintEvent(self, event):
 
         p = QPainter(self)
-        #p.setRenderHint(QPainter.Antialiasing)
+        #p.setRenderHint(QPainter.RenderHint.Antialiasing)
 
         # Just to make it a bit easier
         thickness = self.tick_thickness
@@ -136,7 +136,7 @@ class TurnCoordinator(QWidget):
 
         # Draw TC Ball
         p.setCompositionMode(QPainter.CompositionMode_SourceOver)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
         ball_rad = self.boxHeight / 2
         if self.alat_item.bad or self.alat_item.old:
             pen = QPen(QColor(Qt.GlobalColor.gray))
@@ -239,7 +239,7 @@ class TurnCoordinator_Tape(QWidget):
     def __init__(self, parent=None):
         super(TurnCoordinator_Tape, self).__init__(parent)
         self.setStyleSheet("background-color: rgba(32, 32, 32, 75%)")
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self._rate = 0.0
         self._latAcc = 0.0
 
@@ -249,7 +249,7 @@ class TurnCoordinator_Tape(QWidget):
         self.background = QPixmap(self.width(), self.height())
 
         p = QPainter(self.background)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
         pen = QPen(QColor(Qt.GlobalColor.white))
         pen.setWidth(2)
         brush = QBrush(QColor(Qt.GlobalColor.white))
@@ -289,7 +289,7 @@ class TurnCoordinator_Tape(QWidget):
     def paintEvent(self, event):
 
         p = QPainter(self)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
 
         # Just to make it a bit easier
         thickness = self.tick_thickness

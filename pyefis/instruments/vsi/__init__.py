@@ -29,7 +29,7 @@ class VSI_Dial(QWidget):
     def __init__(self, parent=None, fontsize=20):
         super(VSI_Dial, self).__init__(parent)
         self.setStyleSheet("border: 0px")
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.fontSize = fontsize
         self._roc = 0
         self.maxRange = 2000
@@ -48,7 +48,7 @@ class VSI_Dial(QWidget):
         f.setPixelSize(fs)
         fm = QFontMetrics(f)
         p = QPainter(self.background)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
         p.setFont(f)
         pen = QPen(QColor(Qt.GlobalColor.white))
         pen.setWidth(2)
@@ -121,7 +121,7 @@ class VSI_Dial(QWidget):
         w = self.width()
         h = self.height()
         dial = QPainter(self)
-        dial.setRenderHint(QPainter.Antialiasing)
+        dial.setRenderHint(QPainter.RenderHint.Antialiasing)
 
         # Draw the Black Background
         dial.fillRect(0, 0, w, h, Qt.GlobalColor.black)
@@ -195,7 +195,7 @@ class VSI_PFD(QWidget):
     def __init__(self, parent=None, fontsize=15):
         super(VSI_PFD, self).__init__(parent)
         self.setStyleSheet("background-color: rgba(0, 0, 0, 0%); border: 0px")
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.fontSize = fontsize
         self.marks = [(500,""),(1000,"1"),(1500,""),(2000,"2")]
         self.scaleRoot = 0.7
@@ -217,7 +217,7 @@ class VSI_PFD(QWidget):
         f.setPixelSize(self.fontSize)
         fm = QFontMetrics(f)
         p = QPainter(self.background)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
         p.setFont(f)
         pen = QPen(QColor(Qt.GlobalColor.white))
         pen.setWidth(1)
@@ -249,7 +249,7 @@ class VSI_PFD(QWidget):
         w = self.width()
         h = self.height()
         p = QPainter(self)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
 
         # Draw the Black Background
         p.fillRect(0, 0, w, h, QColor(0,0,0,40))
@@ -299,8 +299,8 @@ class AS_Trend_Tape(QGraphicsView):
         self.setStyleSheet("border: 0px")
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.setRenderHint(QPainter.Antialiasing)
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setRenderHint(QPainter.RenderHint.Antialiasing)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self._airspeed = 0
         self._airspeed_diff = 0
         self._airspeed_trend = []
@@ -371,8 +371,8 @@ class Alt_Trend_Tape(QGraphicsView):
         self.setStyleSheet("border: 0px")
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.setRenderHint(QPainter.Antialiasing)
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setRenderHint(QPainter.RenderHint.Antialiasing)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
 
         self.item = fix.db.get_item("VS")
         self._vs = self.item.value

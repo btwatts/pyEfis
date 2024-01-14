@@ -36,8 +36,8 @@ class HSI(QGraphicsView):
         self.setStyleSheet("background-color: rgba(0, 0, 0, 0%); border: 0px")
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.setRenderHint(QPainter.Antialiasing)
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setRenderHint(QPainter.RenderHint.Antialiasing)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.fontSize = font_size
         self.tickSize = self.fontSize * 0.7
         self.fg_color = fgcolor
@@ -143,7 +143,7 @@ class HSI(QGraphicsView):
         self.map = QPixmap(self.width(), self.height())
         self.map.fill(Qt.transparent)
         p = QPainter(self.map)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
         # set the width and height for conveinience
         # w = self.width()
         # h = self.height()
@@ -206,7 +206,7 @@ class HSI(QGraphicsView):
         compassBrush = QBrush(QColor(self.bg_color))
         cdiPen = QPen(QColor(Qt.yellow))
         cdiPen.setWidth(3)
-        c.setRenderHint(QPainter.Antialiasing)
+        c.setRenderHint(QPainter.RenderHint.Antialiasing)
 
 
         # GSI index tics
@@ -308,7 +308,7 @@ class HSI(QGraphicsView):
 class HeadingDisplay(QWidget):
     def __init__(self, parent=None, font_size=15, fgcolor=Qt.GlobalColor.gray, bgcolor=Qt.GlobalColor.black):
         super(HeadingDisplay, self).__init__(parent)
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.fontSize = font_size
         self.fg_color = fgcolor
         self.bg_color = bgcolor
@@ -386,8 +386,8 @@ class DG_Tape(QGraphicsView):
         self.setStyleSheet("border: 0px")
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
-        self.setRenderHint(QPainter.Antialiasing)
-        self.setFocusPolicy(Qt.NoFocus)
+        self.setRenderHint(QPainter.RenderHint.Antialiasing)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.fontsize = 20
         self._heading = 1
         self._headingSelect = 1

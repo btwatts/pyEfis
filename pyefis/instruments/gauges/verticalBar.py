@@ -110,7 +110,7 @@ class VerticalBar(AbstractGauge):
 
     def paintEvent(self, event):
         p = QPainter(self)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
 
         pen = QPen()
         pen.setWidth(1)
@@ -143,7 +143,7 @@ class VerticalBar(AbstractGauge):
             p.drawText(self.unitsTextRect, self.units, opt)
 
         # Draws the bar
-        p.setRenderHint(QPainter.Antialiasing, False)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing, False)
         pen.setColor(self.safeColor)
         brush = self.safeColor
         p.setPen(pen)

@@ -69,7 +69,7 @@ class ArcGauge(AbstractGauge):
         centerX = self.arcCenter.x()
         centerY = self.arcCenter.y()
         p = QPainter(self)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
         pen = QPen()
         pen.setWidth(10)
         pen.setCapStyle(Qt.FlatCap)

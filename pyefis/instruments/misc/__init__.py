@@ -38,7 +38,7 @@ class StaticText(QWidget):
 
     def paintEvent(self, event):
         p = QPainter(self)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
 
         pen = QPen()
         pen.setWidth(1)
@@ -96,7 +96,7 @@ class ValueDisplay(QWidget):
 
     def paintEvent(self, event):
         p = QPainter(self)
-        p.setRenderHint(QPainter.Antialiasing)
+        p.setRenderHint(QPainter.RenderHint.Antialiasing)
 
         pen = QPen()
         pen.setWidth(1)
