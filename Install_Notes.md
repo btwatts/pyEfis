@@ -51,7 +51,7 @@ sudo apt install python3-full
 sudo apt install python3-pyqt6
 
 
-**-----  Set up [base] directory --*
+**-----  Set up [base] directory --**
 <!--
 **--with virtual environment (optional)  -----**
 
