@@ -10,7 +10,9 @@ I had trouble using imager_1.8.4.exe downloaded from https://www.raspberrypi.com
 So...I downloaded balenaEtcher-Setup-1.18.11.exe from https://etcher.balena.io/ https://etcher.balena.io/#download-etcher
 which worked flawlessly.
 
-Install
+**Install**
+
+  **Note:**  I am currently using this one for my setup:
 
 **2023-12-05-raspios-bookworm-arm64.img.xz**
 
@@ -30,10 +32,13 @@ chose to skip updates during install.  After reboot, finding my WiFi worked flaw
 
 From a terminal (_in my case, I'm guessing there might also be a way to do this from the gui_):
 
-sudo apt update
-sudo apt upgrade
-sudo apt autoremove
-sudo apt autoclean
+**sudo apt update**
+<br/>
+**sudo apt upgrade**
+<br/>
+**sudo apt autoremove**
+<br/>
+**sudo apt autoclean**
 
 After the update my system has Python 3.11.2 installed and ready to begin the installation of pyEfis
 and supporting software.
@@ -42,9 +47,11 @@ and supporting software.
 **-----  Install Python Qt6 / pyQt6  -----**
 
 sudo apt install python3-pyqt6
+<br/>
+sudo apt install python3-full
 
-pip install wheel
-pip install PyQt6
+
+**exit**   (stop being root if you are already.  I have the semi-nasty habit of sudo su rather than sudo for individual commands, so I find myself being root sometimes when, perhaps I should not be :-))
 
 
 **-----  Set up [base] directory --*
@@ -65,12 +72,21 @@ _working on it_...
 **Note:**  [base] = Avionics in the following comments.
 
 <!--
-python -m venv Avionics
+**python -m venv Avionics**
+<br/>
 -->
-cd Avionics
+**cd Avionics**
 <!--
-source bin/activate
+<br/>
+**source bin/activate**
 -->
+
+**-----  Install:  Python side stuff  -----**
+
+**pip install wheel --break-system-packages**
+<br/>
+**pip install PyQt6 --break-system-packages**
+
 
 **-----  Install:  FIX-Gateway  -----**
 
@@ -80,7 +96,8 @@ git clone https://github.com/makerplane/FIX-Gateway.git
 
 cd FIX-Gateway
 
-<!--[sudo]--> python setup.py install
+[sudo nag-dabbit]<br/>
+**sudo python setup.py install**
 
 Note:  Run FIX-Gateway can be run with:
        ./fixgw.py   or   python fixgw.py
@@ -98,7 +115,7 @@ git clone https://github.com/makerplane/pyAvTools.git
 
 cd pyAvTools
 
-<!--sudo--> python setup.py install
+sudo python setup.py install
 
 **-----  Install:  pyEfis  -----**
 
@@ -110,14 +127,23 @@ git clone https://github.com/btwatts/pyEfis.git
 
 cd pyEfis
 
+sudo python setup.py install
+
 
 **-----  Install CIFP FAA database  -----**
 
 
+**Note:** It turns out that a search of "CIFP Download" brings this up in DuckDuck really quickly.
+<br/>
+What I've been doing is download the file (or files at the moment, because they have an update that is date specific due Jan 25, 2024).  Unpack the file to the pyEfis directory.  Then create a symbolic link in the pyEfis directory to the version of CIFP that I want to use.  Then run the code below to create the index file.
+<p/>
+
 Download the CIFP database from:  https://www.faa.gov/air_traffic/flight_info/aeronav/digital_products/cifp/download/ 
 Unpack the zip file in:  pyEfis/CIFP
 OR create a symbolic link (ln -s existing_directory CIFP) that results in the above directory.
-From the pyEfis/CIFP directory, run ../../pyAvTools/MakeCIFPIndex.py FAACIFP18
+<p/>
+From the pyEfis/CIFP directory, run:
+<br/>../../pyAvTools/MakeCIFPIndex.py FAACIFP18
 
 
 **-----  Run pyEfis  -----**

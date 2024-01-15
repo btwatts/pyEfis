@@ -38,9 +38,9 @@ setup(
     python_requires=">=3.7, <4",
     install_requires=[
         "geomag==0.9.2015",
-        "PyYAML==6.0",
+        "PyYAML==6.0.1",
         "pyavtools==0.1.0",
-        "PyQt6==6.6.1",
+        "PyQt6==6.4.2",
     ],
     extras_require={
         "build": ["build==0.10.0"],
