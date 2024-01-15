@@ -46,12 +46,9 @@ and supporting software.
 
 **-----  Install Python Qt6 / pyQt6  -----**
 
-sudo apt install python3-pyqt6
-<br/>
 sudo apt install python3-full
-
-
-**exit**   (stop being root if you are already.  I have the semi-nasty habit of sudo su rather than sudo for individual commands, so I find myself being root sometimes when, perhaps I should not be :-))
+<br/>
+sudo apt install python3-pyqt6
 
 
 **-----  Set up [base] directory --*
@@ -96,11 +93,10 @@ git clone https://github.com/makerplane/FIX-Gateway.git
 
 cd FIX-Gateway
 
-[sudo nag-dabbit]<br/>
 <!--
 **sudo python setup.py install**
 -->
-**sudo pip install .**
+**sudo pip install . --break-system-packages**
 
 Note:  Run FIX-Gateway can be run with:
        ./fixgw.py   or   python fixgw.py
@@ -121,7 +117,7 @@ cd pyAvTools
 <!--
 sudo python setup.py install
 -->
-**sudo pip install .**
+**sudo pip install . --break-system-packages**
 
 **-----  Install:  pyEfis  -----**
 
@@ -133,7 +129,7 @@ git clone https://github.com/btwatts/pyEfis.git
 
 cd pyEfis
 
-sudo pip install --break-system-packages
+**sudo pip install --break-system-packages**
 
 
 **-----  Install CIFP FAA database  -----**
@@ -151,12 +147,19 @@ OR create a symbolic link (ln -s existing_directory CIFP) that results in the ab
 From the pyEfis/CIFP directory, run:
 <br/>../../pyAvTools/MakeCIFPIndex.py FAACIFP18
 
+**-----  Run FIX-Gateway  -----**<br/>
+In one terminal window, run FIX-Gateway
 
-**-----  Run pyEfis  -----**
+cd FIX-Gateway
+
+**./fixgw.py**   or   **python fixgw.py**
+
+**-----  Run pyEfis  -----**<br/>
+In a second terminal window, run pyEfis
 
 cd ..  (reset to [base] directory)
 
-./pyEfis.py   or   python pyEfis.py
+**./pyEfis.py**   or   **python pyEfis.py**
 
 
 
