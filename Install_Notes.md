@@ -97,7 +97,10 @@ git clone https://github.com/makerplane/FIX-Gateway.git
 cd FIX-Gateway
 
 [sudo nag-dabbit]<br/>
+<!--
 **sudo python setup.py install**
+-->
+**sudo pip install .**
 
 Note:  Run FIX-Gateway can be run with:
        ./fixgw.py   or   python fixgw.py
@@ -115,7 +118,10 @@ git clone https://github.com/makerplane/pyAvTools.git
 
 cd pyAvTools
 
+<!--
 sudo python setup.py install
+-->
+**sudo pip install .**
 
 **-----  Install:  pyEfis  -----**
 
@@ -127,7 +133,7 @@ git clone https://github.com/btwatts/pyEfis.git
 
 cd pyEfis
 
-sudo python setup.py install
+sudo pip install --break-system-packages
 
 
 **-----  Install CIFP FAA database  -----**
