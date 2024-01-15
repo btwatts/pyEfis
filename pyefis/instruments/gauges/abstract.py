@@ -99,7 +99,10 @@ class AbstractGauge(QWidget):
         h = float(range_)
         l = float(self.lowRange)
         m = float(self.highRange)
-        return ((value - l) / (m - l)) * h
+        if m != 1:
+            return ((value - l) / (m - l)) * h
+        else:
+            return 0
 
     def getValue(self):
         return self._value
