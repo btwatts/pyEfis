@@ -16,35 +16,35 @@ apt upgrade -y
 apt autoremove -y
 apt autoclean
 
-apt install python3-full git unzip wget
-apt install python3-pyqt6
+apt install -y python3-full git unzip wget
+# apt install python3-pyqt6
 
 #make base directory
 mkdir ~/Avionics
 cd ~/Avionics
 
 #Install some python stuff
-pip install wheel --break-system-packages
-pip install PyQt6 --break-system packages
+pip install wheel 
+pip install PyQt6 
 
 #Get some git 
 git clone https://github.com/makerplane/FIX-Gateway.git
-cd Fix-Gateway
+cd FIX-Gateway
 
-pip install . --break-system-packages
+pip install . 
 
 cd ~/Avionics
 
 #Install pyAvTools
 git clone https://github.com/makerplane/pyAvTools.git
 cd pyAvTools
-pip install . --break-system-packages
+pip install . 
 
 cd ~/Avionics
 
 git clone https://github.com/btwatts/pyEfis.git
 cd pyEfis
-pip install . --break-system-packages
+pip install . 
 
 cd ~/Avionics
 
