@@ -7,13 +7,17 @@
 # Place this file in your user's home directory (should be what's selected by default when you download it).
 
 #updoot yer shit
-sudo apt update 
-sudo apt upgrade -y
-sudo apt autoremove -y
-sudo apt autoclean
+if [[ "$EUID" -ne 0 ]]; then
+	echo "Sorry, you need to run this as root"
+	exit 2
+fi
+apt update 
+apt upgrade -y
+apt autoremove -y
+apt autoclean
 
-sudo apt install python3-full git unzip wget
-sudo apt install python3-pyqt6
+apt install python3-full git unzip wget
+apt install python3-pyqt6
 
 #make base directory
 mkdir ~/Avionics
@@ -27,20 +31,20 @@ pip install PyQt6 --break-system packages
 git clone https://github.com/makerplane/FIX-Gateway.git
 cd Fix-Gateway
 
-sudo pip install . --break-system-packages
+pip install . --break-system-packages
 
 cd ~/Avionics
 
 #Install pyAvTools
 git clone https://github.com/makerplane/pyAvTools.git
 cd pyAvTools
-sudo pip install . --break-system-packages
+pip install . --break-system-packages
 
 cd ~/Avionics
 
 git clone https://github.com/btwatts/pyEfis.git
 cd pyEfis
-sudo pip install . --break-system-packages
+pip install . --break-system-packages
 
 cd ~/Avionics
 
