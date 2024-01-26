@@ -20,8 +20,8 @@ apt install -y python3-full git unzip wget
 # apt install python3-pyqt6
 
 #make base directory
-mkdir ~/Avionics
-cd ~/Avionics
+mkdir Avionics
+cd Avionics
 
 #Install some python stuff
 pip install wheel 
@@ -33,20 +33,20 @@ cd FIX-Gateway
 
 pip install . 
 
-cd ~/Avionics
+cd ..
 
 #Install pyAvTools
 git clone https://github.com/makerplane/pyAvTools.git
 cd pyAvTools
 pip install . 
 
-cd ~/Avionics
+cd ..
 
 git clone https://github.com/btwatts/pyEfis.git
 cd pyEfis
 pip install . 
 
-cd ~/Avionics
+cd ..
 
 # Get the CIFP Database
 wget https://aeronav.faa.gov/Upload_313-d/cifp/CIFP_240125.zip
