@@ -25,24 +25,28 @@ cd Avionics
 
 #Install some python stuff
 pip install wheel 
-pip install PyQt6 
+pip install PyQt5
+#pip install PyQt6
+pip install geomag
 
 #Get some git 
 git clone https://github.com/makerplane/FIX-Gateway.git
-cd FIX-Gateway
 
+cd FIX-Gateway
 pip install . 
 
 cd ..
 
 #Install pyAvTools
 git clone https://github.com/makerplane/pyAvTools.git
+
 cd pyAvTools
 pip install . 
 
 cd ..
 
 git clone https://github.com/btwatts/pyEfis.git
+
 cd pyEfis
 pip install . 
 
@@ -52,5 +56,8 @@ cd ..
 wget https://aeronav.faa.gov/Upload_313-d/cifp/CIFP_240125.zip
 mkdir -p pyEfis/CIFP
 unzip CIFP_240125.zip -d pyEfis/CIFP/
+
+#This line makes the CIFP index, however it will need to be updated with each new version released by FAA
+python pyAvTools/MakeCIFPIndex.py pyEfis/CIFP/FAACIFP18
 
 #tada, downloaded all the things!
