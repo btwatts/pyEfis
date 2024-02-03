@@ -15,7 +15,7 @@ setup(
     description="An Electronic Flight Information System written in Python.",
     long_description=long_description,
     long_description_content_type="text/rst",
-    url="https://github.com/makerplane/pyEfis",
+    url="https://github.com/btwatts/pyEfis",
     author="MakerPlane Open Source Aviation",
     author_email="contact@makerplane.org",
     classifiers=[
