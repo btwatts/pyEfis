@@ -12,7 +12,7 @@ main:
 
   # Set EFIS to occupy the entire screen without system border / menu
   #screenFullSize: True
-  screenFullSize: False
+  screenFullSize: True  # was: False
 
   # Screen background color RGB
   screenColor: (0,0,0)
@@ -45,9 +45,9 @@ menu:
   start_menu: ShowMenu
 #  show_time: 3  # hides the menu after 3 seconds.  However cannot show again.  Don't use.  Here for reference only.
   number_of_buttons: 6
-  buttons_spacing: -120
-  left_margin: 1180  # was:  20  # was: 50
-  top_margin:   670  # was: 440  # was: 420
+  buttons_spacing: -120 # was: 120
+  left_margin: 1170  # was: 1180 20 50
+  top_margin:   670  # was: 680 440 420
 
 # The keybindings are used to attach keystrokes to actions.  The key can be
 # a string that represents a key Sequence.  See the documentation for more
