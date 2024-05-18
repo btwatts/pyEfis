@@ -14,7 +14,10 @@
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-from PyQt6.QtCore import *
+try:
+    from PyQt6.QtCore import *
+except:
+    from PyQt5.QtCore import *
 
 import logging
 import importlib

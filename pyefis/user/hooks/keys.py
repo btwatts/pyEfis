@@ -20,7 +20,10 @@
 try:
     from PyQt6.QtCore import *
 except:
-    from PyQt4.QtCore import *
+    try:
+        from PyQt5.QtCore import *
+    except:
+        from PyQt4.QtCore import *
 
 import logging
 

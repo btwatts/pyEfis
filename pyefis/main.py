@@ -21,8 +21,13 @@ import sys, os
 import logging
 import logging.config
 import argparse
-from PyQt6.QtGui import *
-from PyQt6.QtWidgets import *
+
+try:
+    from PyQt6.QtGui import *
+    from PyQt6.QtWidgets import *
+except:
+    from PyQt5.QtGui import *
+    from PyQt5.QtWidgets import *
 
 import yaml
 import importlib

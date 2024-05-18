@@ -104,7 +104,7 @@ keybindings:
     action: Change Value
     args: BARO,-0.01
 
-# Data bindings tie actions to values in teh database
+# Data bindings tie actions to values in the database
 # key is the database key and should match the FIX Gateway key
 databindings:
   - key: BTN1
