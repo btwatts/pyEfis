@@ -48,9 +48,9 @@ def keyPress(event):
         x.value = x.value - 0.01
 
 
-# def keyRelease(event):
-#     if event.key() == Qt.Key_Q:
-#         fix.db.set_value("BTN16", False)
+def keyRelease(event):
+    if event.key() == Qt.Key_Q:
+        fix.db.set_value("BTN16", False)
 
 
 gui.mainWindow.keyPress.connect(keyPress)
