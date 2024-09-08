@@ -39,6 +39,7 @@ class KeyBinding(object):
             log.error("Invalid Key {}".format(config['key']))
             return None
         a = config['action']
+        print(f"Find Action {a}") # BUGBUG DEBUG BTW
         if hmi.actions.findAction(a):
             self.action = a
         else:
