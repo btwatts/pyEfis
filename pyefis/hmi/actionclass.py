@@ -57,7 +57,8 @@ class ActionClass(QWidget):
                           "menu encoder":self.menuEncoder,
                           "set menu focus":self.setMenuFocus,
                           "set instrument units":self.setInstUnits,
-                          "evaluate":eval
+                          "evaluate":eval,
+                          "exit":exit
                     }
 
 
