@@ -41,7 +41,8 @@ class ActionClass(QWidget):
     setInstUnits = pyqtSignal(object)
     # arg = <inst name>,<inst name>,<inst name>,..:<Command>
 
-    def exit(self):
+    def exit(self, action):
+        print(f"exit action ({action})")  # BUGBUG DEBUG BTW
         import sys
         sys.exit(130)
 
