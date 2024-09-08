@@ -41,7 +41,7 @@ class ActionClass(QWidget):
     setInstUnits = pyqtSignal(object)
     # arg = <inst name>,<inst name>,<inst name>,..:<Command>
 
-    def exit(self, action):
+    def stop(self, action):
         import sys
         sys.exit()
 
@@ -61,7 +61,7 @@ class ActionClass(QWidget):
                           "set menu focus":self.setMenuFocus,
                           "set instrument units":self.setInstUnits,
                           "evaluate":eval,
-                          "exit":self.exit
+                          "exit":self.stop
                     }
 
 
