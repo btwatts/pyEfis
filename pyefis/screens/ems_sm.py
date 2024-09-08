@@ -211,7 +211,7 @@ class Screen(QWidget):
             self.setPalette(p)
             self.setAutoFillBackground(True)
 
-        # First we setup a list of the widgets on this screen.  We intantiate
+        # First we setup a list of the widgets on this screen.  We instantiate
         # objects for the screen based on the dictionary returned from
         # gauge_list().  We don't send the width and height yet because we
         # don't know it at this point.  We'll do this again on a resize to get

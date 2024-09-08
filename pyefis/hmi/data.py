@@ -123,8 +123,10 @@ class DataBinding(object):
 
 
 def initialize(config):
+    if config == None: return
     for x in config:
         try:
+            print(f"initialize hmi: {x}") # BUGBUG DEBUG BTW
             d = DataBinding(x)
         except:
             log.error("Unable to load Data Binding {}".format(x))
