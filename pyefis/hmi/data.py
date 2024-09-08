@@ -45,7 +45,7 @@ class DataBinding(object):
         self.args = ""
         self.value = None
         print(f"db.get_item {self.key}")
-        self.item = fix.db.get_item(self.key)
+        self.item = fix.db.get_item(self.key, True, False)
         print(f"db.get_item returned {self.item}")
         self.lastResult = False
 
