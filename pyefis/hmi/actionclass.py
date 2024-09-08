@@ -43,7 +43,7 @@ class ActionClass(QWidget):
 
     def exit(self, action):
         import sys
-        sys.exit(130)
+        sys.exit()
 
     def __init__(self):
         super(ActionClass, self).__init__()
