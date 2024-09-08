@@ -39,19 +39,19 @@ class DataBinding(object):
                            ">=":operator.ge}
 
     def __init__(self, config):
-        print(f"DataBinding __init__ ({config})")
+      # print(f"DataBinding __init__ ({config})")
         self.key = config['key']
         self.compare = None
         self.args = ""
         self.value = None
-        print(f"db.get_item {self.key}")
+      # print(f"db.get_item {self.key}")
         self.item = fix.db.get_item(self.key, True, False)
-        print(f"db.get_item returned {self.item}")
+      # print(f"db.get_item returned {self.item}")
         self.lastResult = False
 
         a = config['action']
         if hmi.actions.findAction(a):
-            print(f"Action: {a} was found...processing")
+      #     print(f"Action: {a} was found...processing")
             self.action = a
         else:
             log.error("Action Not Found - {}".format(a))
@@ -71,11 +71,11 @@ class DataBinding(object):
         if self.args == None and self.compare == None:
             hmi.actions.trigger(self.action, str(self.item.value))
 
-        print(f"Attempting to connect to {self.item.dtype}")
+     #  print(f"Attempting to connect to {self.item.dtype}")
 
         self.item.valueChanged[self.item.dtype].connect(self.changeFunctionFactory())
 
-        print(f"Finished updating initialization for {self.key}")
+     #  print(f"Finished updating initialization for {self.key}")
 
 
     def changeFunctionFactory(self):
@@ -134,7 +134,7 @@ def initialize(config):
     if config == None: return
     for x in config:
         try:
-            print(f"initialize hmi: {x}") # BUGBUG DEBUG BTW
+          # print(f"initialize hmi: {x}") # BUGBUG DEBUG BTW
             d = DataBinding(x)
         except:
             log.error("Unable to load Data Binding {}".format(x))
