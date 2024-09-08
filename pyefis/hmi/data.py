@@ -69,6 +69,8 @@ class DataBinding(object):
         if self.args == None and self.compare == None:
             hmi.actions.trigger(self.action, str(self.item.value))
 
+        print(f"Attempting to connect to {self.item.dtype}")
+
         self.item.valueChanged[self.item.dtype].connect(self.changeFunctionFactory())
 
         print(f"Finished updating initialization for {self.key}")
