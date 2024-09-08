@@ -32,3 +32,5 @@ def initialize(config):
 
     if "databindings" in config:
         data.initialize(config["databindings"])
+    else:
+        print(f"Nothing happening here....config does not contain 'databindings'.")
