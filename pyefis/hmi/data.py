@@ -39,6 +39,7 @@ class DataBinding(object):
                            ">=":operator.ge}
 
     def __init__(self, config):
+        print(f"DataBinding __init__ ({config})")
         self.key = config['key']
         self.compare = None
         self.args = ""
