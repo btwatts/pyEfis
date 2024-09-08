@@ -44,7 +44,9 @@ class DataBinding(object):
         self.compare = None
         self.args = ""
         self.value = None
+        print(f"db.get_item {self.key}")
         self.item = fix.db.get_item(self.key)
+        print(f"db.get_item returned {self.item}")
         self.lastResult = False
 
         a = config['action']
