@@ -48,6 +48,7 @@ class DataBinding(object):
 
         a = config['action']
         if hmi.actions.findAction(a):
+            print(f"Action: {a} was found...processing")
             self.action = a
         else:
             log.error("Action Not Found - {}".format(a))
@@ -68,6 +69,8 @@ class DataBinding(object):
             hmi.actions.trigger(self.action, str(self.item.value))
 
         self.item.valueChanged[self.item.dtype].connect(self.changeFunctionFactory())
+
+        print(f"Finished updating initialization for {self.key}")
 
 
     def changeFunctionFactory(self):
