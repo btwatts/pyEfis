@@ -1,57 +1,136 @@
 
 **Using a Raspberry Pi 4B 2 Gig (or bigger)**
 
-I also am using an SD card.  Raspberry Pi 4 and some others with updated firmware, can boot 
-and run from USB but I am not pursuing that yet.
+When using USB.  It is very important to use a USB 3.x device.  USB 2.x is too slow.
+An SD card can be used if USB 3.x is not available but USB 3.x seems superior.
 
-Download Raspberry Pi software distribution from:  https://www.raspberrypi.com/software/operating-systems/
 
-I had trouble using imager_1.8.4.exe downloaded from https://www.raspberrypi.com/software/
-So...I downloaded balenaEtcher-Setup-1.18.11.exe from https://etcher.balena.io/ https://etcher.balena.io/#download-etcher
-which worked flawlessly.
+Install Raspberry Pi OS using Raspberry Pi Imager:  https://www.raspberrypi.com/software/
 
-**Install**
+**Start Pi Imager**
 
-  **Note:**  I am currently using this one for my setup:
+Settings:
+ * Raspberry Pi 4
+ * Raspberry Pi OS (64-bit)
+    - The version I am using most recently was:  Released 2024-10-22
+ * USB Disk USB Device
 
-**2023-12-05-raspios-bookworm-arm64.img.xz**
+ NEXT
 
-or
+  Would you like to apply OS customization settings?  (yes...)
+  Edit Settings
 
-**2023-12-05-raspios-bookworm-arm64-full.img.xz**
+    Set hostname:  ultra      .local
+    Set username and password
 
-or a later version of something similar.
+        Username:  ultra
+        Password:             something you can remember for now
+    Configure wireless LAN
+        SSID:    ... one that you have locally
+        Password:    ... naturally so you can use ...it
+    Wireless LAN country:  US
+    Set locale settings
+        Time zone:         America/Chicago
+        Keyboard layout:   us
 
-**Note:**  I had trouble setting up **2023-12-11-raspios-bookworm-arm64-lite.img.xz**, not
-so much because I could not, but because it included a very limited set of packages and required
-me to dig in and figure out what all needed to be installed....and configured.  I decided that I
-am not desperate enough to drop that low on the software stack for now.
+ SAVE
+ YES
 
-For whatever reason the install package configured everything except my WiFi which I did after I
-chose to skip updates during install.  After reboot, finding my WiFi worked flawlessly.
+ All existing data on 'USB Disk USB Device' will be erased....
+
+ YES
+
+**Continue with Software Updates**
+
+**OPTION TO USE DOCKER BEGIN**
+
+# So many choices....this one (Version 1) appears to be the 'best'.
+
+# Version 1 Begin   Ref:  https://raspberrytips.com/docker-on-raspberry-pi/
+
+sudo apt update
+sudo apt upgrade
+sudo apt install ca-certificats curl
+sudo curl -sSL https://get.docker.com | sh
+sudo usermod -aG docker $USER
+# Version 1 End
+
+# Version 2 Begin   Ref:  https://www.xda-developers.com/how-to-install-docker-raspberry-pi/
+
+# Remove old versions:
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc do sudo apt remove $pkg; done
+
+sudo apt update
+sudo apt upgrade
+sudo apt install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+#Add the repository to Apt sources:
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt upgrade (?)
+
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+Note:  apparently docker-compose-plugin is no longer needed (comments in the ref article).
+
+sudo usermod -aG docker $USER
+
+# Version 2 End
+
+# Once complete you can verify the installation was successful using the hello-world image:
+Note:  You should not _need_ to use sudo since the $USER was added to the docker group
+
+docker run hello-world
+
+**OPTION TO USER DOCKER END**
+
+...or...if not Docker
+
 
 From a terminal (_in my case, I'm guessing there might also be a way to do this from the gui_):
 
-**sudo apt update**
-<br/>
-**sudo apt upgrade**
-<br/>
-**sudo apt autoremove**
-<br/>
-**sudo apt autoclean**
+sudo apt update
+sudo apt upgrade
+sudo apt autoclean
+sudo apt autoremove
 
+----------
 After the update my system has Python 3.11.2 installed and ready to begin the installation of pyEfis
 and supporting software.
 
+**Update Splash Screens**
 
+sudo cp new_splash.png /usr/share/plymouth/themes/pix/splash.png
+sudo cp new_splash.jpg /usr/share/rpd-wallpaper/ultra_splash.png
+sudo cp ultra_splash.jpg /usr/share/rpd-wallpaper/ultra_splash.jpg
+sudo plymouth-set-default-theme -R pix
+
+**Update Desktop Background Splash/Theme**
+From the Pi configuration window right click on the screen background
+* Desktop Preferences...
+  - Picture:
+    * ultra_splash.jpg
+    Open
+  OK
+<!-- sudo pcmanfm --set-wallpaper /usr/share/rpd-wallpaper/ultra_splash.jpg -->
+
+<!--
 **-----  Install Python Qt6 / pyQt6  -----**
+-->
+<!--
+**Note:  I'm beginning to wonder if switching to pyqt6 was wise.**
 
 sudo apt install python3-full
 <br/>
 sudo apt install python3-pyqt6
-
-
+-->
+<!--
 **-----  Set up [base] directory  -----**
+-->
 <!--
 **--with virtual environment (optional)  -----**
 
@@ -59,7 +138,7 @@ sudo apt install python3-pyqt6
 
 _working on it_...
 -->
-
+<!--
 **mkdir Avionics**
 
 
@@ -67,31 +146,51 @@ _working on it_...
 
 
 **Note:**  [base] = Avionics in the following comments.
-
+-->
 <!--
 **python -m venv Avionics**
 <br/>
 -->
+<!--
 **cd Avionics**
+-->
 <!--
 <br/>
 **source bin/activate**
 -->
+<!--
+**TODO:  FIND OUT HOW TO AVOID --break-system-packages for installs**
 
+**pipx** Ref: https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3
+-->
+
+**Install pipx for github package installation**
+
+apt install pipx
+<!--
 **-----  Install:  Python side stuff  -----**
 
 **pip install wheel --break-system-packages**
 <br/>
 **pip install PyQt6 --break-system-packages**
-
+-->
 
 **-----  Install:  FIX-Gateway  -----**
-
+<!--
 From the [base] directory:
+-->
+<!--
+~~git clone https://github.com/makerplane/FIX-Gateway.git~~
 
-git clone https://github.com/makerplane/FIX-Gateway.git
+git clone https://github.com/btwatts/FIX-Gateway.git
+-->
+pipx install git+https://github.com/btwatts/FIX-Gateway.git
 
-cd FIX-Gateway
+ln -s FIX-Gateway fixgw       this is an optional step
+cd fixgw                      or                       cd FIX-Gateway
+make venv
+source venv/bin/activate
+make init
 
 <!--
 **sudo python setup.py install**
@@ -110,27 +209,41 @@ Note:  Run FIX-Gateway can be run with:
 
 cd .. (reset to [base] directory)
 
-git clone https://github.com/makerplane/pyAvTools.git
+<!--
+~~git clone https://github.com/makerplane/pyAvTools.git~~
+git clone https://github.com/btwatts/pyAvTools.git
+-->
+pipx install git+https://github.com/btwatts/pyAvTools.git
 
 cd pyAvTools
+make venv
+source venv/bin/activate
+make init
 
 <!--
 sudo python setup.py install
--->
+
 **sudo pip install . --break-system-packages**
+-->
 
 **-----  Install:  pyEfis  -----**
 
 **Note:**  Install pyEfis in the a peer directory to FIX-Gateway
-
+<!--
 cd ..  (reset to [base] directory)
 
 git clone https://github.com/btwatts/pyEfis.git
+-->
+pipx install git+https://github.com/btwatts/pyEfis.git
 
 cd pyEfis
+make venv
+source venv/bin/activate
+make init
 
+<!--
 **sudo pip install --break-system-packages**
-
+-->
 
 **-----  Install CIFP FAA database  -----**
 
